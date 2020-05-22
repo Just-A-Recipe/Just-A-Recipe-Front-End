@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Recipe from '../Detail/Recipe';
-// import styles from './Recipes.css';
 
 const RecipeList = ({ recipeList }) => {
   const recipeElements = recipeList.map(recipe => (
@@ -20,9 +19,9 @@ const RecipeList = ({ recipeList }) => {
     
   );
 };
-console.log(recipeElements);
-console.log(...recipe);
-console.log(recipe.id);
+// console.log(recipeElements);
+// console.log(...recipe);
+// console.log(recipe.id);
   
   
 
