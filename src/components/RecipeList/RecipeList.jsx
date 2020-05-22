@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Recipe from '../../components/App/Detail';
+import Recipe from '../../components/App/Detail/Recipe';
 // import styles from './Recipes.css';
 
 const RecipeList = ({ recipeList }) => {
