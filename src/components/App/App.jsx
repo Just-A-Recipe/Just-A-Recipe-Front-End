@@ -8,7 +8,10 @@ import { BrowserRouter as Router,
 // import './App.css';
 // import Home from './Home.js';
 // import AboutUs from './AboutUs.js';
-import SearchBar from './Search/SearchBar';
+
+
+import RecipeViewer from '../containers/RecipeList/RecipeViewer';
+
 
 
 
@@ -16,19 +19,14 @@ import SearchBar from './Search/SearchBar';
 export default class App extends Component {
   render() {
     return (
-
-      <Router>
-
-
-        <div>
-          <Home />
-          {/* <Route exact path ='/' component={Home}/> */}
-     
-          {/* <Route exact path ='/about-us' component={AboutUs}/> */}
-        </div>
-        
-        
-      </Router>
+      
+      <div>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={RecipeViewer} />
+          </Switch>
+        </Router>
+      </div>
     );
   }
 }
