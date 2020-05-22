@@ -17,18 +17,24 @@ export default class App extends Component {
   render() {
     return (
 
+
       <Router>
 
 
+
+      <div>
+        {/* <Route exact path ='/' component={Home}/> */}
         <div>
           <Home />
           {/* <Route exact path ='/' component={Home}/> */}
      
           {/* <Route exact path ='/about-us' component={AboutUs}/> */}
         </div>
+        {/* <Route exact path ='/about-us' component={AboutUs}/> */}
+      </div>
         
         
-      </Router>
+    // </Router>
     );
   }
 }
