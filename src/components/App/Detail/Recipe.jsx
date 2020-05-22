@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Recipe = ({ image, title, ingredients, instructions }) => (
-  <fugure>
+  <figure>
     <img src={image}/>
     <figcaption>
       <h2>{title}</h2>
     </figcaption>
     <p>{ingredients}</p>
     <p>{instructions}</p>
-  </fugure>
+  </figure>
 );
 
 Recipe.propTypes = {
