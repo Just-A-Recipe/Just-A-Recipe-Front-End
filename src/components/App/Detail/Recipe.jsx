@@ -27,4 +27,4 @@ Recipe.propTypes = {
 };
 
 export default Recipe;
-//ingredients is an array of objs and also instructions. We have to figure out how to make thos proptypes. 
+ 
