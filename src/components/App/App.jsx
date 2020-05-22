@@ -1,32 +1,19 @@
-import React, { Component } from 'react';
-import Home from './Home/Home';
-import { BrowserRouter as Router,
-  Link,
+import React from 'react';
+import { 
+  BrowserRouter as Router,
   Route,
   Switch
 } from 'react-router-dom';
-// import './App.css';
-// import Home from './Home.js';
-// import AboutUs from './AboutUs.js';
-
-
 import RecipeViewer from '../containers/RecipeList/RecipeViewer';
+import RecipeDetailViewer from '../containers/RecipeDetailViewer/RecipeDetailViewer';
 
-
-
-
-
-export default class App extends Component {
-  render() {
+export default function App() {
     return (
-      
-      <div>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={RecipeViewer} />
-          </Switch>
-        </Router>
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={RecipeViewer} />
+          <Route exact path="/:id" component={RecipeDetailViewer} />
+        </Switch>
+      </Router>
     );
   }
-}
