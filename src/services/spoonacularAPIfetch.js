@@ -1,14 +1,14 @@
 export const fetchRecipes = (searchQuery) => {
-  return fetch(`localhost:7890/api/v1/recipes/?searchQuery=${searchQuery}`)
+  return fetch(`http://localhost:7890/api/v1/recipes/?searchQuery=${searchQuery}`)
     .then(res => res.json())
-    .then(json => json.results.map(({ title, image }) => {
+    .then(json => json.map(({ title, image }) => ({
       title,
-      image;
-    }));
+      image
+    })));
 };
 
 export const fetchRecipe = id => {
-  return fetch(`localhost:7890/api/v1/recipes/${id}`)
+  return fetch(`http://localhost:7890/api/v1/recipes/${id}`)
     .then(res => res.json())
     .then(json => ({
       title: json.title,

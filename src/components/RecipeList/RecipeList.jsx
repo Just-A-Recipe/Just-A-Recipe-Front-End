@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 import Recipe from '../Detail/Recipe';
 
 const RecipeList = ({ recipeList }) => {
+  console.log(recipeList);
   const recipeElements = recipeList.map(recipe => (
     <Link to={`/${recipe.id}`} key={recipe.id}>
       <li>
         <Recipe {...recipe} />
       </li>
     </Link>
+
   ));
 
   return (
