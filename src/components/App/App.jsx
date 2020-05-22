@@ -1,31 +1,19 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router,
-  Link,
+import React from 'react';
+import { 
+  BrowserRouter as Router,
   Route,
   Switch
 } from 'react-router-dom';
-// import './App.css';
-// import Home from './Home.js';
-// import AboutUs from './AboutUs.js';
+import RecipeViewer from '../../containers/RecipeList/RecipeViewer';
+import RecipeDetailViewer from '../../containers/RecipeDetailViewer/RecipeDetailViewer';
 
-
-
-export default class App extends Component {
-  render() {
-    return (
-      <Router>
-
-
-        <div>
-          {/* <Route exact path ='/' component={Home}/> */}
-          <div>
-            <img src="https://media.tenor.com/images/213a4c8c6fb278cf2fb10bcc0da1b68d/tenor.gif"></img>
-          </div>
-          {/* <Route exact path ='/about-us' component={AboutUs}/> */}
-        </div>
-        
-        
-      </Router>
-    );
-  }
+export default function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/" component={RecipeViewer} />
+        <Route exact path="/:id" component={RecipeDetailViewer} />
+      </Switch>
+    </Router>
+  );
 }

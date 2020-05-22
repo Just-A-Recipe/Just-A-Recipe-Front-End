@@ -1,22 +1,20 @@
-// require('dotenv').config();
+export const fetchRecipes = (searchQuery) => {
+  return fetch(`http://localhost:7890/api/v1/recipes/?searchQuery=${searchQuery}`)
+    .then(res => res.json())
+    .then(json => json.map(({ title, image }) => ({
+      title,
+      image
+    })));
+};
 
-// export const fetchRecipe = () => {
-//   return fetch(`${process.env.REACT_APP_API_URL}/api/v1/recipes`)
-//     .then(res => res.json());
-// };
-
-const request = require('superagent');
-require('dotenv').config();
-
-function fetchSimilarRecipes() {
-  const id =  595654;
-  return request
-    .get(`https://api.spoonacular.com/recipes/${id}/similar?${process.env.API_KEY}`)
-    .then(res => res);
-}
-
-fetchSimilarRecipes().then(res => console.log(res.body));
-
-// module.exports = {
-//   fetchSimilarRecipes
-// };
+export const fetchRecipe = id => {
+  return fetch(`http://localhost:7890/api/v1/recipes/${id}`)
+    .then(res => res.json())
+    .then(json => ({
+      title: json.title,
+      image: json.image,
+      ingredients: json.ingredients,
+      measures: json.measures,
+      instructions: json.instructions
+    }));
+};
