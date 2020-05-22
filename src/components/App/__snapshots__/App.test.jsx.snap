@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component renders App 1`] = `
-<h1>
-  Hello World
-</h1>
+<BrowserRouter>
+  <div>
+    <div>
+      <img
+        src="https://media.tenor.com/images/213a4c8c6fb278cf2fb10bcc0da1b68d/tenor.gif"
+      />
+    </div>
+  </div>
+</BrowserRouter>
 `;
