@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recipe component renders a Recipe 1`] = `
+<figure>
+  <img
+    src="https://www.inspiredtaste.net/wp-content/uploads/2019/03/Spaghetti-with-Meat-Sauce-Recipe-1-1200.jpg"
+  />
+  <figcaption>
+    <h2>
+      spaghetti
+    </h2>
+  </figcaption>
+  <p>
+    <Component />
+  </p>
+  <p>
+    <Component />
+  </p>
+  <p>
+    some long instrcutions
+  </p>
+</figure>
+`;
