@@ -33,7 +33,8 @@
     "react-router-dom": "^5.2.0",
     "redux-thunk": "^2.3.0",
     "shallow": "^1.0.0",
-    "superagent": "^5.2.2"
+    "superagent": "^5.2.2",
+    "wrapper": "^0.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

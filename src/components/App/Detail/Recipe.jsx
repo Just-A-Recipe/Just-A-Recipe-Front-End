@@ -16,13 +16,8 @@ const Recipe = ({ image, title, ingredients, instructions, measures }) => (
 Recipe.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  ingredients: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired
-  })),
-  measures: PropTypes.object(PropTypes.shape({
-    amount:PropTypes.string.isRequired,
-    us: PropTypes.string.isRequired
-  })),
+  ingredients: PropTypes.arrayOf(PropTypes.object).isRequired,
+  measures: PropTypes.object.isRequired,
   instructions: PropTypes.string.isRequired
 };
 
