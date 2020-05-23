@@ -27,7 +27,7 @@ const RecipeViewer = () => {
     <>
       {search}
       <button onClick={() => decrement(-1)} disabled={page === 1}>&lt;</button>
-      <button onClick={() => increment(1)} disabled={recipes.length < 20}>&gt;</button>
+      <button onClick={() => increment(1)} disabled={recipes.length < 10}>&gt;</button>
       <RecipeList recipeList={recipes} />
     </>
   );
