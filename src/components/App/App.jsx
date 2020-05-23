@@ -7,11 +7,13 @@ import {
 import RecipeViewer from '../../containers/RecipeList/RecipeViewer';
 import RecipeDetailViewer from '../../containers/RecipeDetailViewer/RecipeDetailViewer';
 import SearchBar from '../Search/SearchBar';
+import Header from '../Header/Header';
 
 export default function App() {
   return (
     <Router>
-      <SearchBar/>
+      <Header />
+      <SearchBar />
       <Switch>
         <Route exact path="/" component={RecipeViewer} />
         <Route exact path="/:id" component={RecipeDetailViewer} />
