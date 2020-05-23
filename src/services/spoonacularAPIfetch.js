@@ -1,7 +1,8 @@
 export const fetchRecipes = (searchQuery) => {
   return fetch(`http://localhost:7890/api/v1/recipes/?searchQuery=${searchQuery}`)
     .then(res => res.json())
-    .then(json => json.map(({ title, image }) => ({
+    .then(json => json.map(({ id, title, image }) => ({
+      id,
       title,
       image
     })));

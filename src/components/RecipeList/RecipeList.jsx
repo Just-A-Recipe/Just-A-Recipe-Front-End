@@ -8,11 +8,11 @@ import Recipe from '../Detail/Recipe';
 const RecipeList = ({ recipeList }) => {
   console.log(recipeList);
   const recipeElements = recipeList.map(recipe => (
-    <Link to={`/${recipe.id}`} key={recipe.id}>
-      <li>
+    <li key={recipe.id}>
+      <Link to={`/${recipe.id}`}>
         <Recipe {...recipe} />
-      </li>
-    </Link>
+      </Link>
+    </li>
 
   ));
 
