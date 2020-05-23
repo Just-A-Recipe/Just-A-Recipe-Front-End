@@ -10,8 +10,9 @@ const SearchBar = ({ text, onChange, onSubmit, inputName = 'text', buttonText = 
 
 SearchBar.propTypes = {
   text: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequried,
+  onChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   inputName: PropTypes.string,
   buttonText: PropTypes.string
 };
+export default SearchBar;
