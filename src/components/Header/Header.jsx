@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from '../Search/SearchBar';
 
-export default class Home extends Component {
+export default class Header extends Component {
   render() {
     return (
       <div>
