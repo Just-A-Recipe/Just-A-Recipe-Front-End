@@ -1,0 +1,59 @@
+Landnig Page
+  Header
+    Title
+    Search {searchQuery gets sent to fetchRecipes}
+    Account
+  Random Cards with good pics {gets response from "randomly generated IDs" upon page load}
+  Footer
+    About Us Link
+    Alchemy Link
+
+Search Result Page
+  Header
+    Title
+    Search {searchQuery gets sent to fetchReipes}
+    Account
+  Results of Search {displays results of searchQuery. We store it by ID}
+  Footer
+    About Us Link
+    Alchemy Link
+
+Recipe Detail Page
+  Header
+    Title
+    Search {searchQuery gets sent to fetchRecipes}
+    Account
+  Recipe Name (gotten from FetchRecipeById)
+  Ingredients (gotten from FetchRecipeById)
+  Instructions (gotten from FetchRecipeById)
+  Footer
+    About Us Link
+    Alchemy Link
+
+
+Landing Page
+  hardcoded random id fetch and display
+Search Result Page
+  displays "ID" based on seachQuery
+Recipe Detail Page
+  result from the ID seach (fetch)
+
+
+***API Fetches we have***
+fetchRecipes
+  takes our searchQuery from the search bar and returns a set number of responses
+  .get(`https://api.spoonacular.com/recipes/search?query=${searchQuery}&number=${resPP}&apiKey=${process.env.API_KEY}`)
+
+fetchRecipe
+  takes the id and returns one recipe
+  fetch(`http://localhost:7890/api/v1/recipes/${id}`)
+  
+fetchSimilarRecipes
+  takes an ID and returns similiar recipes
+  .get(`https://api.spoonacular.com/recipes/${id}/similar?${process.env.API_KEY}`)
+
+
+***API Fetches we need***
+fetchRandomRecipes
+  Looks for random recipes with good pictures
+  I think we're going to have to look ourselfs for recipes with good pics, get those IDs. Then hard code a couple different recipes and randomize our result for the page.
