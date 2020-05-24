@@ -43,6 +43,22 @@ Recipe Detail Page
 fetchRecipes
   takes our searchQuery from the search bar and returns a set number of responses
   .get(`https://api.spoonacular.com/recipes/search?query=${searchQuery}&number=${resPP}&apiKey=${process.env.API_KEY}`)
+{
+"results": [
+{
+"id": 878183,
+"title": "Jack Daniel’s Grilled Steak",
+"image": "jack-daniels-grilled-steak-878183.jpg"
+}
+],
+"baseUri": "https://spoonacular.com/recipeImages/",
+"offset": 0,
+"number": 1,
+"totalResults": 860,
+"processingTimeMs": 479,
+"expires": 1590605943971
+}
+!!!!!!!!!!!!!!!!!!!!!!!!!in order to get the image we're going to have to take the baseUri+image!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 fetchRecipe
   takes the id and returns one recipe
@@ -57,3 +73,11 @@ fetchSimilarRecipes
 fetchRandomRecipes
   Looks for random recipes with good pictures
   I think we're going to have to look ourselfs for recipes with good pics, get those IDs. Then hard code a couple different recipes and randomize our result for the page.
+
+fetchRecipeDetails
+  takes an id aand
+
+Containers:
+RecipeViewer - a look at all the recipes - takes in searchQuery and displays title and image (has ID)
+RecipeDetailViewer - a look at specific recipes - takes and ID and displays title, image, ingredients, measurements
+
