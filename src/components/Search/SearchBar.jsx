@@ -15,6 +15,7 @@ const SearchBar = ({ searchQuery, onChange, onSearch }) => (
   </section>
 );
 
+SearchBar.propTypes = {
   searchQuery: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequried,
   onSearch: PropTypes.func.isRequired,
