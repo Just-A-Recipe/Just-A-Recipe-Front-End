@@ -1,18 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SearchBar = ({ text, onChange, onSubmit, inputName = '', buttonText = 'Submit' }) => (
-  <form onSubmit={onSubmit}>
-    <input type="text" value={text} name={inputName} onChange={onChange} />
-    <button>{buttonText}</button> 
-  </form>
+
+
+const SearchBar = ({ searchQuery, onChange, onSearch }) => (
+  <section>
+    <form onSubmit={onSearch}>
+      <input 
+        type="text" 
+        value={searchQuery} 
+        onChange={onChange} />
+      <button>Search</button> 
+    </form>
+  </section>
 );
 
-SearchBar.propTypes = {
-  text: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-  inputName: PropTypes.string,
-  buttonText: PropTypes.string
+  searchQuery: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequried,
+  onSearch: PropTypes.func.isRequired,
+
 };
 export default SearchBar;

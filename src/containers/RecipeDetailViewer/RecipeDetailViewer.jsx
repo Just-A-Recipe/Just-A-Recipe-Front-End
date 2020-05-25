@@ -18,7 +18,7 @@ const RecipeDetailViewer = ({ match }) => {
 
   //will probably want to use reciple List formatted into an array
   return <Recipe 
-    name={recipe.title}
+    title={recipe.title}
     image={recipe.image}
     ingredients={recipe.ingredients}
     instructions={recipe.instructions}
