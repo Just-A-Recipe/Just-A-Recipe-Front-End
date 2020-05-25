@@ -16,7 +16,7 @@ const RecipeDetailViewer = ({ match }) => {
   if(!recipe) 
     return <h1>Loading</h1>;
 
-  //will probably want to use reciple List formatted into an array
+  //will probably want to use recipe List formatted into an array
   return <Recipe 
     title={recipe.title}
     image={recipe.image}
@@ -30,6 +30,7 @@ RecipeDetailViewer.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
       ingredients: PropTypes.string.isRequired,
       instructions: PropTypes.string.isRequired,
       measures: PropTypes.string.isRequired
