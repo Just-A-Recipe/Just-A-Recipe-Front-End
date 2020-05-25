@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Recipes = ({ title, }) => (
+const Recipes = ({ title }) => (
   <figure>
     <figcaption>
       <h2>{title}</h2>

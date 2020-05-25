@@ -10,9 +10,9 @@ const RecipeList = ({ recipeList }) => {
     
     <Link className={styles.RecipeList} key={recipe.id} to={`/${recipe.id}` }>
       <img src={`https://spoonacular.com/recipeImages/${recipe.id}-556x370.jpg`}/>
-      <li>
+      <ul>
         <Recipes {...recipe} />
-      </li>
+      </ul>
     </Link>
 
   ));
