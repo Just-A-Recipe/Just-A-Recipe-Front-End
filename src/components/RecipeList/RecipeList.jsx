@@ -6,7 +6,6 @@ import Recipe from '../Detail/Recipe';
 
 
 const RecipeList = ({ recipeList }) => {
-  console.log(recipeList);
   const recipeElements = recipeList.map(recipe => (
     <li key={recipe.id}>
       <Link to={`/${recipe.id}`}>
