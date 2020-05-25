@@ -29,7 +29,10 @@ const RecipeDetailViewer = ({ match }) => {
 RecipeDetailViewer.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.string.isRequired
+      id: PropTypes.string.isRequired,
+      ingredients: PropTypes.string.isRequired,
+      instructions: PropTypes.string.isRequired,
+      measures: PropTypes.string.isRequired
     }).isRequired
   }).isRequired
 };
