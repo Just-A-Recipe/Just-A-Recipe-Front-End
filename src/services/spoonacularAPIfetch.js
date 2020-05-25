@@ -19,10 +19,4 @@ export const fetchRecipe = (id) => {
       instructions: json.instructions
     }));
 };
-export const fetchRecipeImage = image => {
-  return fetch (`http://localhost:7890/ap/v1/recipeimages/${id}-312x231.jpg`)
-    .then(res => res.json(image))
-    .then(json => ({
-      image: json.image
-    }));
-};
+
