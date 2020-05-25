@@ -14,11 +14,11 @@ const Recipe = ({ image, title, ingredients, instructions, measures }) => (
 );
 
 Recipe.propTypes = {
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  ingredients: PropTypes.arrayOf(PropTypes.object).isRequired,
-  measures: PropTypes.object.isRequired,
-  instructions: PropTypes.string.isRequired
+  image: PropTypes.string,
+  title: PropTypes.string,
+  ingredients: PropTypes.arrayOf(PropTypes.object),
+  measures: PropTypes.object,
+  instructions: PropTypes.string
 };
 
 export default Recipe;
