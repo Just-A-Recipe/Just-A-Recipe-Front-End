@@ -9,10 +9,10 @@ const RecipeList = ({ recipeList }) => {
   const recipeElements = recipeList.map(recipe => (
     
     <Link className={styles.RecipeList} key={recipe.id} to={`/${recipe.id}` }>
-      <img src={`https://spoonacular.com/recipeImages/${recipe.id}-556x370.jpg`}/>
-      <ul>
+      <li>
+        <img src={`https://spoonacular.com/recipeImages/${recipe.id}-556x370.jpg`}/>
         <Recipes {...recipe} />
-      </ul>
+      </li>
     </Link>
 
   ));

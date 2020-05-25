@@ -1,0 +1,8 @@
+.Recipe {
+    img {
+        width: 300px;
+        position: relative;
+        float: left;
+    }
+
+}
