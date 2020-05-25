@@ -9,7 +9,7 @@ const RecipeDetailViewer = ({ match }) => {
   useEffect(() => {
     fetchRecipe(match.params.id)
       .then(recipe => setRecipe(recipe));
-    console.log(match.params.id);
+    // console.log(match.params.id);
       
   }, []);
 

@@ -7,11 +7,13 @@ import styles from './RecipeList.css';
 const RecipeList = ({ recipeList }) => {
   
   const recipeElements = recipeList.map(recipe => (
-    <li key={recipe.id}>
-      <Link className={styles.RecipeList} to={`/${recipe.id}` }>
+    
+    <Link className={styles.RecipeList} key={recipe.id} to={`/${recipe.id}` }>
+      <img src={`https://spoonacular.com/recipeImages/${recipe.id}-556x370.jpg`}/>
+      <li>
         <Recipe {...recipe} />
-      </Link>
-    </li>
+      </li>
+    </Link>
 
   ));
 
@@ -25,8 +27,9 @@ const RecipeList = ({ recipeList }) => {
 
 RecipeList.propTypes = {
   recipeList: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired
+    // image: PropTypes.string.isRequired
   })).isRequired
 };
 export default RecipeList;
