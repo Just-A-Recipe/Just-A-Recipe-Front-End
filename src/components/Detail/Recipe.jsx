@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Recipe = ({ image, title, ingredients, instructions, measures }) => (
   <figure>
-    <img src={`https://spoonacular.com/recipeImages/${image}`}/>
+    <img src={`${image}`}/>
     <figcaption>
       <h2>{title}</h2>
     </figcaption>

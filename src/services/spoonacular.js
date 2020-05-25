@@ -13,12 +13,16 @@ export const fetchRecipe = (id) => {
     .then(res => res.json())
     .then(json => ({
       title: json.title,
-      image: json.Tmage,
-      imagetype: json.imageType,
+      image: json.image,
       ingredients: json.ingredients,
-      analyzedInstructions: json.analyzedInstructions,
       measures: json.measures,
       instructions: json.instructions
     }));
 };
-
+export const fetchRecipeImage = image => {
+  return fetch (`http://localhost:7890/ap/v1/recipeimages/${id}-312x231.jpg`)
+    .then(res => res.json(image))
+    .then(json => ({
+      image: json.image
+    }));
+};
