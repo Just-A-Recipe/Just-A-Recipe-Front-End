@@ -8,7 +8,7 @@ export const fetchRecipes = (searchQuery) => {
     })));
 };
 
-export const fetchRecipe = id => {
+export const fetchRecipe = (id) => {
   return fetch(`http://localhost:7890/api/v1/recipes/${id}`)
     .then(res => res.json())
     .then(json => ({
