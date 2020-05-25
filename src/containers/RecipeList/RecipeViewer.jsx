@@ -10,7 +10,7 @@ const RecipeViewer = () => {
   useEffect(() => {
     fetchRecipes(searchQuery)
       .then(fetchRecipes => setRecipes(fetchRecipes));
-    console.log(searchQuery, '|||||||||||||||||||||||||||||||||||||||||||||||||||||||||');
+    // console.log(searchQuery, '|||||||||||||||||||||||||||||||||||||||||||||||||||||||||');
       
   }, []);
 
