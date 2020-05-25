@@ -9,14 +9,16 @@ const RecipeDetailViewer = ({ match }) => {
   useEffect(() => {
     fetchRecipe(match.params.id)
       .then(recipe => setRecipe(recipe));
+    console.log(match.params.id);
+      
   }, []);
 
   if(!recipe) 
     return <h1>Loading</h1>;
 
-  //will probablyw ant to use reciple List formatted into an array
+  //will probably want to use reciple List formatted into an array
   return <Recipe 
-    name={recipe.title}
+    title={recipe.title}
     image={recipe.image}
     ingredients={recipe.ingredients}
     instructions={recipe.instructions}
