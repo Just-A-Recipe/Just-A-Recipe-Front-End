@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Recipe = ({ /* image, */ title, ingredients, instructions, measures }) => (
+const Recipe = ({ image, title, ingredients, instructions, measures }) => (
   <figure>
-    {/* <img src={image}/> */}
+    <img src={`https://spoonacular.com/recipeImages/${image}`}/>
     <figcaption>
       <h2>{title}</h2>
     </figcaption>
