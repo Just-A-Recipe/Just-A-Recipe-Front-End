@@ -1,4 +1,4 @@
-import fetchRecipes from './spoonacularAPIFetch';
+import fetchRecipes from './spoonacular';
 
 describe ('spoonacular api fetch call', () => {
   it('fetchs a list of recipes', () => {

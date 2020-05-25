@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import RecipeList from '../../components/RecipeList/RecipeList';
-import { fetchRecipes } from '../../services/spoonacularAPIFetch';
-import SearchBar from '../../components/Search/SearchBar';
+import { fetchRecipes } from '../../services/spoonacular';
 
 const RecipeViewer = () => {
   const [page, setPage] = useState(1);
