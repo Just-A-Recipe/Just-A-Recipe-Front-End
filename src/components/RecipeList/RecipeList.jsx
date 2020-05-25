@@ -23,6 +23,7 @@ const RecipeList = ({ recipeList }) => {
     
   );
 };
+console.log();
 // console.log(recipeElements);
 // console.log(...recipe);
 // console.log(recipe.id);

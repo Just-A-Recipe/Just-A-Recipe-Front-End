@@ -13,8 +13,10 @@ export const fetchRecipe = (id) => {
     .then(res => res.json())
     .then(json => ({
       title: json.title,
-      image: json.image,
+      image: json.Tmage,
+      imagetype: json.imageType,
       ingredients: json.ingredients,
+      analyzedInstructions: json.analyzedInstructions,
       measures: json.measures,
       instructions: json.instructions
     }));
