@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
 import Recipe from '../Detail/Recipe';
-
+import styles from './RecipeList.css';
 
 const RecipeList = ({ recipeList }) => {
+  
   const recipeElements = recipeList.map(recipe => (
     <li key={recipe.id}>
-      <Link to={`/${recipe.id}`}>
+      <Link className={styles.RecipeList} to={`/${recipe.id}` }>
         <Recipe {...recipe} />
       </Link>
     </li>
@@ -22,11 +22,6 @@ const RecipeList = ({ recipeList }) => {
     
   );
 };
-// console.log(recipeElements);
-// console.log(...recipe);
-// console.log(recipe.id);
-  
-  
 
 RecipeList.propTypes = {
   recipeList: PropTypes.arrayOf(PropTypes.shape({
