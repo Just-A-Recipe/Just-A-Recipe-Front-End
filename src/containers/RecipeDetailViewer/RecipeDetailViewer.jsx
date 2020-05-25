@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
-import { fetchRecipe } from '../../services/spoonacularAPIfetch';
+import { fetchRecipe } from '../../services/spoonacular';
 import Recipe from '../../components/Detail/Recipe';
 
 const RecipeDetailViewer = ({ match }) => {
