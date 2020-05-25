@@ -19,3 +19,4 @@ export const fetchRecipe = (id) => {
       instructions: json.instructions
     }));
 };
+

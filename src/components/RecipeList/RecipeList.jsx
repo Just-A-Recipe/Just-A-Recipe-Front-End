@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Recipe from '../Detail/Recipe';
+import Recipes from '../RecipeList/Recipes';
 import styles from './RecipeList.css';
 
 const RecipeList = ({ recipeList }) => {
@@ -10,9 +10,9 @@ const RecipeList = ({ recipeList }) => {
     
     <Link className={styles.RecipeList} key={recipe.id} to={`/${recipe.id}` }>
       <img src={`https://spoonacular.com/recipeImages/${recipe.id}-556x370.jpg`}/>
-      <li>
-        <Recipe {...recipe} />
-      </li>
+      <ul>
+        <Recipes {...recipe} />
+      </ul>
     </Link>
 
   ));
