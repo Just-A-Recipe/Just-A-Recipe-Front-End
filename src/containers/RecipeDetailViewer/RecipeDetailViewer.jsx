@@ -9,9 +9,7 @@ const RecipeDetailViewer = ({ match }) => {
   useEffect(() => {
     fetchRecipe(match.params.id)
       .then(recipe => setRecipe(recipe));
-    console.log(match.params.id);
-    console.log(recipe);
-    console.log(match);
+   
     
       
   }, []);
@@ -21,7 +19,7 @@ const RecipeDetailViewer = ({ match }) => {
 
   //will probably want to use recipe List formatted into an array
 
-
+  console.log(recipe.analyzedInstructions);
   return <Recipe 
     title={recipe.image}
     image={recipe.image}
