@@ -1,24 +1,32 @@
 export const fetchRecipes = (searchQuery) => {
   return fetch(`http://localhost:7890/api/v1/recipes/?searchQuery=${searchQuery}`)
     .then(res => res.json())
-    .then(json => json.map(({ id, title, image }) => ({
+    .then(json => json.map(({ id, title, image, extendedIngredients, analyzedInstructions }) => ({
       id,
       title,
-      image
+      image,
+      extendedIngredients,
+      analyzedInstructions
     })));
 };
 
 export const fetchRecipe = (id) => {
   return fetch(`http://localhost:7890/api/v1/recipes/${id}`)
+  
     .then(res => res.json())
     .then(json => ({
       title: json.title,
       image: json.image,
-      ingredients: json.ingredients,
-      measures: json.measures,
+      extendedIngredients: json.extendedIngredients,
+      analyzedInstructions: json.analyzedInstructions,
       instructions: json.instructions
     }));
+  // console.log(analyzedInstructions);
+  
+  
 };
+console.log();
+
 export const fetchRecipeImage = image => {
   return fetch (`http://localhost:7890/ap/v1/recipeimages/${id}-312x231.jpg`)
     .then(res => res.json(image))

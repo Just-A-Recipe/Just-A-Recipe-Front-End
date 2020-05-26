@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Recipes from '../RecipeList/Recipes';
+import Recipe from '../Detail/Recipe';
 import styles from './RecipeList.css';
 
 const RecipeList = ({ recipeList }) => {
@@ -11,7 +11,7 @@ const RecipeList = ({ recipeList }) => {
     <Link className={styles.RecipeList} key={recipe.id} to={`/${recipe.id}` }>
       <li>
         <img src={`https://spoonacular.com/recipeImages/${recipe.id}-556x370.jpg`}/>
-        <Recipes {...recipe} />
+        <Recipe {...recipe} />
       </li>
     </Link>
 
@@ -27,7 +27,7 @@ const RecipeList = ({ recipeList }) => {
 
 RecipeList.propTypes = {
   recipeList: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     // image: PropTypes.string.isRequired
   })).isRequired
