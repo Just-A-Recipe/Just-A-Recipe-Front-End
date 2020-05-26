@@ -1,53 +1,28 @@
-// import React from 'react';
-// import PropTypes from 'prop-types';
-// import RecipeList from '../RecipeList/RecipeList';
-
-
-// const RecipeDetail =  ({ recipes }) => {
-//   const detailElelments = recipes.map(recipe =>
-//     console.log(recipe, '|||||||||///|||||?/|||'));
-  
-//   return detailElelments;  
-// };
-
-// export default RecipeDetail;
-
 
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Recipe = ( image, title, ingredients, instructions ) => {
-  const detailElelments = instructions.map(instruction => (
+const Recipe = ({ image, title, ingredients, instructions }) => {
+  console.log(ingredients);
+  const instructionElements = instructions[0].steps.map(instruction => (
     <li key={instruction.id}>
-      <p> {instruction} </p>
+      <p> {instruction.step} </p>
     </li>
   ));
-  // console.log(Recipe, '|||||||||||recipe');
+  const ingredientsElements = ingredients[0].map(ingredient => (
+    <li key={ingredient.id}>
+      <p> {ingredient}</p>
+    </li>
+  ));
+  
   
   return (
     <ul>
-      {detailElelments}
+      {instructionElements}
+      {ingredientsElements}
     </ul>
   );
 };
-
-export default Recipe;
-
-
-
-
-//   return (/* extended is a list  &&&& anzalied is a list aslo */
-//     <figure>
-//       <img src={`${Recipe.image}`}/>
-//       <figcaption>
-//         <h2>{Recipe.title}</h2>
-//       </figcaption>
-//       <p>{Recipe.ingredients}</p>
-//       <p>{Recipe.measures}</p>
-//       <p>{Recipe.analyzedInstructions}</p>
-//     </figure>
-//   );
-// };
 
 Recipe.propTypes = {
   recipes: PropTypes.shape({
@@ -56,8 +31,8 @@ Recipe.propTypes = {
     ingredients: PropTypes.arrayOf(PropTypes.object),
     measures: PropTypes.object,
     instructions: PropTypes.string
-  })
+  }).isRequired
 };
 
-// export default Recipe;
+export default Recipe;
  

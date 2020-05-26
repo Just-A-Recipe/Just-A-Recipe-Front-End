@@ -11,7 +11,6 @@ const RecipeList = ({ recipeList }) => {
     <Link className={styles.RecipeList} key={recipe.id} to={`/${recipe.id}` }>
       <li>
         <img src={`https://spoonacular.com/recipeImages/${recipe.id}-556x370.jpg`}/>
-        <Recipe {...recipe} />
       </li>
     </Link>
 
