@@ -10,6 +10,9 @@ const RecipeDetailViewer = ({ match }) => {
     fetchRecipe(match.params.id)
       .then(recipe => setRecipe(recipe));
     console.log(match.params.id);
+    console.log(recipe);
+    console.log(match);
+    
       
   }, []);
 
@@ -17,12 +20,13 @@ const RecipeDetailViewer = ({ match }) => {
     return <h1>Loading</h1>;
 
   //will probably want to use recipe List formatted into an array
+
+
   return <Recipe 
-    title={recipe.title}
+    title={recipe.image}
     image={recipe.image}
-    ingredients={recipe.ingredients}
-    instructions={recipe.instructions}
-    measures={recipe.measures}
+    ingredients={recipe.extendedIngredients}
+    instructions={recipe.analyzedInstructions}
   />;
 };
 
