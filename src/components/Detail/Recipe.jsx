@@ -3,23 +3,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Recipe = ({ image, title, ingredients, instructions }) => {
-  console.log(ingredients);
+  // console.log(ingredients[0].original);
   const instructionElements = instructions[0].steps.map(instruction => (
     <li key={instruction.id}>
       <p> {instruction.step} </p>
     </li>
   ));
-  const ingredientsElements = ingredients[0].map(ingredient => (
+  console.log(Recipe);
+  const ingredientsElements = ingredients.map(ingredient => (
     <li key={ingredient.id}>
-      <p> {ingredient}</p>
+      <p> {ingredient.original}</p>
     </li>
   ));
   
-  
   return (
     <ul>
-      {instructionElements}
       {ingredientsElements}
+      {instructionElements}
     </ul>
   );
 };
@@ -29,7 +29,7 @@ Recipe.propTypes = {
     image: PropTypes.string,
     title: PropTypes.string,
     ingredients: PropTypes.arrayOf(PropTypes.object),
-    measures: PropTypes.object,
+    
     instructions: PropTypes.string
   }).isRequired
 };
