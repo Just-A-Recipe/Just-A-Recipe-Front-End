@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Recipe from '../Detail/Recipe';
 import styles from './RecipeList.css';
 
+
 const RecipeList = ({ recipeList }) => {
   
   const recipeElements = recipeList.map(recipe => (
@@ -11,6 +12,7 @@ const RecipeList = ({ recipeList }) => {
     <Link className={styles.RecipeList} key={recipe.id} to={`/${recipe.id}` }>
       <li>
         <img src={`https://spoonacular.com/recipeImages/${recipe.id}-556x370.jpg`}/>
+        <h2>{recipe.title}</h2>
       </li>
     </Link>
 
