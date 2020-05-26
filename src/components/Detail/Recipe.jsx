@@ -8,13 +8,15 @@ const Recipe = ({ image, title, ingredients, instructions }) => {
     <li key={instruction.id}>
       <p> {instruction.step} </p>
     </li>
+    
   ));
-  console.log(Recipe);
+
   const ingredientsElements = ingredients.map(ingredient => (
     <li key={ingredient.id}>
       <p> {ingredient.original}</p>
     </li>
   ));
+  
   
   return (
     <ul>
@@ -29,9 +31,9 @@ Recipe.propTypes = {
     image: PropTypes.string,
     title: PropTypes.string,
     ingredients: PropTypes.arrayOf(PropTypes.object),
-    
-    instructions: PropTypes.string
+    instructions: PropTypes.arrayOf(PropTypes.object)
   }).isRequired
+    
 };
 
 export default Recipe;
