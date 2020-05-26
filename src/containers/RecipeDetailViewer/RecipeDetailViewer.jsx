@@ -9,20 +9,24 @@ const RecipeDetailViewer = ({ match }) => {
   useEffect(() => {
     fetchRecipe(match.params.id)
       .then(recipe => setRecipe(recipe));
-    // console.log(match.params.id);
+    console.log(match.params.id);
+    console.log(recipe);
+    console.log(match);
+    
       
   }, []);
 
   if(!recipe) 
     return <h1>Loading</h1>;
 
-  //will probably want to use reciple List formatted into an array
+  //will probably want to use recipe List formatted into an array
+
+
   return <Recipe 
-    title={recipe.title}
+    title={recipe.image}
     image={recipe.image}
-    ingredients={recipe.ingredients}
-    instructions={recipe.instructions}
-    measures={recipe.measures}
+    ingredients={recipe.extendedIngredients}
+    instructions={recipe.analyzedInstructions}
   />;
 };
 
@@ -30,6 +34,7 @@ RecipeDetailViewer.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
       ingredients: PropTypes.string.isRequired,
       instructions: PropTypes.string.isRequired,
       measures: PropTypes.string.isRequired
