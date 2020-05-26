@@ -1,9 +1,8 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const Recipe = ({ image, title, ingredients, instructions }) => {
-  // console.log(ingredients[0].original);
+  
   const instructionElements = instructions[0].steps.map(instruction => (
     <li key={instruction.id}>
       <p> {instruction.step} </p>
@@ -15,7 +14,7 @@ const Recipe = ({ image, title, ingredients, instructions }) => {
       <p> {ingredient.original}</p>
     </li>
   ));
-  
+ 
   return (
     <ul>
       {ingredientsElements}
@@ -27,7 +26,7 @@ const Recipe = ({ image, title, ingredients, instructions }) => {
 Recipe.propTypes = {
   recipes: PropTypes.shape({
     image: PropTypes.string,
-    title: PropTypes.string,
+    title: PropTypes.string.isRequired,
     ingredients: PropTypes.arrayOf(PropTypes.object),
     
     instructions: PropTypes.string

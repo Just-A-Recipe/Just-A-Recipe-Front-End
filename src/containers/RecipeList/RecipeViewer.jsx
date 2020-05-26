@@ -10,9 +10,7 @@ const RecipeViewer = () => {
   
   useEffect(() => {
     fetchRecipes(searchQuery)
-      .then(fetchRecipes => setRecipes(fetchRecipes));
-    // console.log(searchQuery, '|||||||||||||||||||||||||||||||||||||||||||||||||||||||||');
-      
+      .then(fetchRecipes => setRecipes(fetchRecipes));   
   }, []);
   
   const onChange = ({ target }) => setSearchQuery(target.value);

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Recipe from '../Detail/Recipe';
 import styles from './RecipeList.css';
 
 const RecipeList = ({ recipeList }) => {
@@ -28,7 +27,6 @@ RecipeList.propTypes = {
   recipeList: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    // image: PropTypes.string.isRequired
   })).isRequired
 };
 export default RecipeList;
