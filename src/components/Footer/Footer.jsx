@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import styles from './Footer.css';
 
 
-export default class Header extends Component {
+export default class Footer extends Component {
   render() {
     return (
       <div className={styles.footerDiv}>
-        <h5>Contact Us</h5>
-        <h5>Alchemy Code Lab</h5>
+        <h5 className={styles.contact}>Contact Us</h5>
+        <h5 className={styles.alchemy}>Powered by Alchemy Code Lab</h5>
       </div>
     );
   }

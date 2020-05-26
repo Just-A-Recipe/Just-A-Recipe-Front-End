@@ -1,4 +1,19 @@
 .footerDiv {
   background-color: aquamarine;
-  
+  height: 1vh;
+  padding: 1vh;
+  margin: -1vh
 }
+
+.contact {
+  display: inline;
+  text-align: left;
+  /* float: left; */
+}
+
+.alchemy {
+  display: inline;
+  text-align: right;
+  /* float: right; */
+}
+
