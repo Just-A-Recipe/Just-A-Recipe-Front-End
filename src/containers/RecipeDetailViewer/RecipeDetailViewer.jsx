@@ -21,7 +21,7 @@ const RecipeDetailViewer = ({ match }) => {
 
   console.log(recipe.analyzedInstructions);
   return <Recipe 
-    title={recipe.image}
+    title={recipe.title}
     image={recipe.image}
     ingredients={recipe.extendedIngredients}
     instructions={recipe.analyzedInstructions}
