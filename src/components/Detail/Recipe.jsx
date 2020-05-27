@@ -21,10 +21,12 @@ const Recipe = ({ image, title, ingredients, instructions }) => {
         <img className='detail-image' src={`${image}`} />
       </div>
       <section>
-        {ingredientsElements}
-      </li>
-      <ul>
-        {instructionElements}
+        <li>
+          {ingredientsElements}
+        </li>
+        <ul>
+          {instructionElements}
+        </ul>
       </section>
     </div>
   );
@@ -35,7 +37,7 @@ Recipe.propTypes = {
     image: PropTypes.string,
     title: PropTypes.string,
     ingredients: PropTypes.arrayOf(PropTypes.object),
-    instructions: PropTypes.arrayOf(PropTypes.object)
+    instructions: PropTypes.arrayOf(PropTypes.object),
   }).isRequired
 };
 

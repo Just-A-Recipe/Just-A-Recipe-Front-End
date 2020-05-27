@@ -7,19 +7,17 @@ html{
   font-size: 10px;
   font-family: sans-serif;
 }
-section{
-padding: 10rem 0;
-}
 .heading{
+  font-family: pacifico;
   text-transform: uppercase;
   font-size: 3.5rem;
   letter-spacing: 3px;
   margin-right: 3px;
   margin-bottom: 5rem;
   text-align: center;
-  color: yellow;
-  position: relative;
-}
+  color: black;
+  position: absolute;
+};
 .heading::after{
   content: '';
   width:10rem;
@@ -31,36 +29,35 @@ padding: 10rem 0;
   transform: translateX(-50%);
   border-radius: 2rem;
 }
-.card-wrapper{
-
+.cardWrapper{
 display: flex;
 flex-flow: wrap;
 justify-content: space-evenly;
 
+
 }
 
 .card{
-  width: 32rem;
+  width: 30rem;
   background-color: #ebeef8;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 20rem 0;
   box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, 2);
 }
 .card .card-img{
-  width: 100%;
+  width: 50%;
   height: 26rem;
   object-fit: cover;
   clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
 }
-
-.profile-img{
-  width: 15rem;
-  height: 15rem;
+.profileImg{
+  width: 20rem;
+  height: 20rem;
   object-fit: cover;
-  border-radius: 50%;
+ 
   margin-top: -11rem;
   z-index: 999;
   border:  1rem solid #ebeef8;
@@ -70,7 +67,7 @@ justify-content: space-evenly;
   color: #333;
   margin: 1.5rem 0;
 }
-.job-title{
+.jobTitle{
   color: #777;
   font-size: 1.5rem;
   font-weight: 300;
@@ -81,4 +78,15 @@ justify-content: space-evenly;
   font-style: italic;
   text-align: center;
   color: #333;
+}
+.container{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+}
+.socialIcon{
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border:  1rem  aquamarine;
 }
