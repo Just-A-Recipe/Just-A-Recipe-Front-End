@@ -1,5 +1,5 @@
-export const fetchRecipes = (searchQuery) => {
-  return fetch(`http://localhost:7890/api/v1/recipes/?searchQuery=${searchQuery}`)
+export const fetchRecipes = (searchQuery, offset) => {
+  return fetch(`https://just-a-recipe.herokuapp.com/api/v1/recipes/?searchQuery=${searchQuery}&offset=${offset}`)
     .then(res => res.json())
     .then(json => json.map(({ id, title, image, extendedIngredients, analyzedInstructions }) => ({
       id,
@@ -11,7 +11,7 @@ export const fetchRecipes = (searchQuery) => {
 };
 
 export const fetchRecipe = (id) => {
-  return fetch(`http://localhost:7890/api/v1/recipes/${id}`)
+  return fetch(`https://just-a-recipe.herokuapp.com/api/v1/recipes/${id}`)
   
     .then(res => res.json())
     .then(json => ({
@@ -22,13 +22,10 @@ export const fetchRecipe = (id) => {
       instructions: json.instructions
     }));
   // console.log(analyzedInstructions);
-  
-  
 };
-console.log();
 
 export const fetchRecipeImage = image => {
-  return fetch (`http://localhost:7890/ap/v1/recipeimages/${id}-312x231.jpg`)
+  return fetch (`https://just-a-recipe.herokuapp.com/ap/v1/recipeimages/${id}-312x231.jpg`)
     .then(res => res.json(image))
     .then(json => ({
       image: json.image
