@@ -31,3 +31,28 @@ export const fetchRecipeImage = image => {
       image: json.image
     }));
 };
+
+export const addFavorite = (userEmail, recipeId) => {
+  return fetch ('https://just-a-recipe.herokuapp.com/ap/v1/favorites', { method: 'POST', body: { userEmail: userEmail, recipeId: recipeId } })
+    .then(res => res.json())
+    .then(json => ({
+      message: 'Recipe added successfully',
+      id: json.id
+
+    }));
+
+};
+
+export const deleteFavorite = (recipeId) => {
+  return fetch (`https://just-a-recipe.herokuapp.com/ap/v1/favorites/${recipeId}`, { method: 'DELETE' })
+    .then(res => res.json())
+    .then(json => ({
+      message: json.message
+    }));
+};
+
+export const getUserFavorites = (userEmail) => {
+  return fetch (`https://just-a-recipe.herokuapp.com/ap/v1/favorites/${userEmail}`)
+    .then(res => res.json());
+ 
+};
