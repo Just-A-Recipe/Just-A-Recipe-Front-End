@@ -2,6 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Recipe = ({ image, title, ingredients, instructions }) => {
+
+  
+
+  console.log(image, title);
+
+
   const instructionElements = instructions[0].steps.map(instruction => (
     <div className='instructions-table' key={instruction.id}>
       <p> {instruction.step} </p>
@@ -21,8 +27,12 @@ const Recipe = ({ image, title, ingredients, instructions }) => {
         <img className='detail-image' src={`${image}`} />
       </div>
       <section>
-        {ingredientsElements}
-        {instructionElements}
+        <li>
+          {ingredientsElements}
+        </li>
+        <ul>
+          {instructionElements}
+        </ul>
       </section>
     </div>
   );
@@ -31,9 +41,9 @@ const Recipe = ({ image, title, ingredients, instructions }) => {
 Recipe.propTypes = {
   recipes: PropTypes.shape({
     image: PropTypes.string,
-    title: PropTypes.string,
+    title: PropTypes.string.isRequired,
     ingredients: PropTypes.arrayOf(PropTypes.object),
-    instructions: PropTypes.arrayOf(PropTypes.object)
+    instructions: PropTypes.arrayOf(PropTypes.object),
   }).isRequired
 };
 
