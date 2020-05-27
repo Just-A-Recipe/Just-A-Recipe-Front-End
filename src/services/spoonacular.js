@@ -1,5 +1,5 @@
-export const fetchRecipes = (searchQuery, offset) => {
-  return fetch(`http://localhost:7890/api/v1/recipes/?searchQuery=${searchQuery}&offset=${offset}`)
+export const fetchRecipes = (searchQuery) => {
+  return fetch(`http://localhost:7890/api/v1/recipes/?searchQuery=${searchQuery}`)
     .then(res => res.json())
     .then(json => json.map(({ id, title, image, extendedIngredients, analyzedInstructions }) => ({
       id,
