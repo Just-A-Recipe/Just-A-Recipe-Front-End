@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import styles from './login.css'
 import { Link, withRouter } from 'react-router-dom'
 import firebase from '../../components/Firebase/Firebase';
+import PropTypes from 'prop-types';
 
 function Login(props) {
   const [email, setEmail] = useState('');
@@ -30,7 +31,11 @@ function Login(props) {
         </form>
       </div>
     </div>
-  )
+  );
 }
 
-export default withRouter(Login)
+Login.propTypes = {
+  history: PropTypes.object.isRequired
+};
+
+export default withRouter(Login);
