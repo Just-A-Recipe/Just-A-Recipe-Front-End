@@ -9,8 +9,6 @@ const RecipeDetailViewer = ({ match }) => {
   useEffect(() => {
     fetchRecipe(match.params.id)
       .then(recipe => setRecipe(recipe));
-   
-    
       
   }, []);
 

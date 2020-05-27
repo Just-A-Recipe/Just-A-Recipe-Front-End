@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   BrowserRouter as Router,
   Route,
@@ -8,6 +8,7 @@ import RecipeViewer from '../../containers/RecipeList/RecipeViewer';
 import RecipeDetailViewer from '../../containers/RecipeDetailViewer/RecipeDetailViewer';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
+import About from '../About/About';
 
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -18,10 +19,10 @@ export default function App() {
 
   useEffect(() => {
     firebase.isInitialized().then(val => {
-      console.log("VAL: ", val)
-      setFirebaseInitialized(val)
-    })
-  })
+      console.log("VAL: ", val);
+      setFirebaseInitialized(val);
+    });
+  });
   
   return firebaseInitialized !== false ? (
     <Router>
@@ -31,9 +32,12 @@ export default function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/" component={RecipeViewer} />
+        <Route exact path="/about" component={About} />
         <Route exact path="/:id" component={RecipeDetailViewer} />
       </Switch>
       <Footer />
     </Router>
-  ) : <div>loading...</div>
+  ) : <div>loading...</div>;
 }
+
+
