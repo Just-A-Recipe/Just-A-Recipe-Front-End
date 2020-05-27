@@ -17,8 +17,6 @@ const RecipeDetailViewer = ({ match }) => {
   if(!recipe) 
     return <h1>Loading</h1>;
 
-  //will probably want to use recipe List formatted into an array
-
   console.log(recipe.analyzedInstructions);
   return <Recipe 
     title={recipe.title}

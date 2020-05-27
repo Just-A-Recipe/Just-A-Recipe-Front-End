@@ -1,0 +1,8 @@
+.login-container {
+    align-items: center;
+    justify-content: center;
+}
+.login-paper {
+    height: 400px;
+    width: 500px;
+}
