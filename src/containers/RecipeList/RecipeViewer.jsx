@@ -4,30 +4,31 @@ import { fetchRecipes } from '../../services/spoonacular';
 import SearchBar from '../../components/Search/SearchBar';
 
 const RecipeViewer = () => {
-  const [page, setPage] = useState(1);
   const [recipes, setRecipes] = useState(['']);
   const [searchQuery, setSearchQuery] = useState('');
-  
+  const [offset, setOffset] = useState(0);
+
   useEffect(() => {
-    fetchRecipes(searchQuery)
+    fetchRecipes(searchQuery, offset)
       .then(fetchRecipes => setRecipes(fetchRecipes));
-  }, []);
+  }, [offset]);
   
   const onChange = ({ target }) => setSearchQuery(target.value);
   const onSearch = (e) => {
     e.preventDefault();
-    fetchRecipes(searchQuery)
+    fetchRecipes(searchQuery, offset)
       .then(fetchRecipes => setRecipes(fetchRecipes));
   };
 
-  const decrement = () => setPage(prevPage => prevPage - 1);
-  const increment = () => setPage(prevPage => prevPage + 1);
+  const decrement = () => setOffset(prevPage => prevPage - 20);
+
+  const increment = () => setOffset(prevPage => prevPage + 20);
   
   return (
     <>
       <SearchBar searchQuery={searchQuery} onChange={onChange} onSearch={onSearch}/>
-      <button onClick={() => decrement(-1)} disabled={page === 1}>&lt;</button>
-      <button onClick={() => increment(1)} disabled={recipes.length < 10}>&gt;</button>
+      <button onClick={() => decrement()} disabled={offset === 0}>&lt;</button>
+      <button onClick={() => increment()} disabled={recipes.length < 20}>&gt;</button>
       <RecipeList recipeList={recipes} />
     </>
   );
