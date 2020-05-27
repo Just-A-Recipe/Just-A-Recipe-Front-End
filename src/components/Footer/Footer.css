@@ -1,4 +1,7 @@
 .footerDiv {
   background-color: aquamarine;
-  
+  height: 15px;
+  position: relative;
+  margin-top: 17px;
+  /* bottom: 0; */
 }

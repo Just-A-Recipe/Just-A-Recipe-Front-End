@@ -1,7 +1,40 @@
-.detail-image {
-    height: 30px;
-    width: 30px;
+.mainTitle {
+    font-weight: bold; 
+    font-family: cursive;   
+    font-size: xx-large;
 }
-.ingredients-table {
-    float: left;
+
+.titles {
+    text-decoration: underline aquamarine;
+    font-size: x-large;
+}
+
+.ingredients {
+    text-align: center;
+    width: 30vw;
+}
+
+.instructions {
+    text-align: center;
+    width: 30vw;
+}
+
+.imageDiv {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%
+}
+/* .image {
+    display: block;
+    justify-content: center;
+    height: 300px;
+    width: auto;
+} */
+
+.theSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 17px;
 }
