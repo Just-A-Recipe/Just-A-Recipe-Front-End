@@ -5,8 +5,15 @@ import SearchBar from '../../components/Search/SearchBar';
 import firebase from '../../components/Firebase/Firebase'
 
 const RecipeViewer = () => {
-  const [page, setPage] = useState(1);
   const [recipes, setRecipes] = useState(['']);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    fetchRecipes(searchQuery, offset)
+      .then(fetchRecipes => setRecipes(fetchRecipes));
+  }, [offset]);
+
   const [searchQuery, setSearchQuery] = useState('')
   const [name, setName] = useState('');
 
@@ -14,8 +21,7 @@ const RecipeViewer = () => {
     // do stuff if youre not signed in
   }
   
-  useEffect(() => {
-    
+  useEffect(() => 
     fetchRecipes(searchQuery)
       .then(fetchRecipes => {
         setRecipes(fetchRecipes);
@@ -24,23 +30,24 @@ const RecipeViewer = () => {
       );
       
   }, []);
+
   
   const onChange = ({ target }) => setSearchQuery(target.value);
   const onSearch = (e) => {
     e.preventDefault();
-    fetchRecipes(searchQuery)
+    fetchRecipes(searchQuery, offset)
       .then(fetchRecipes => setRecipes(fetchRecipes));
   };
+
+
+  const decrement = () => setOffset(prevPage => prevPage - 20);
+  const increment = () => setOffset(prevPage => prevPage + 20);
   // const message = firebase.getCurrentUsername ? `Welcome ${firebase.getCurrentUsername}` : null;
-  const decrement = () => setPage(prevPage => prevPage - 1);
-  const increment = () => setPage(prevPage => prevPage + 1);
-  
   return (
     <>
       <SearchBar searchQuery={searchQuery} onChange={onChange} onSearch={onSearch}/>
-      <button onClick={() => decrement(-1)} disabled={page === 1}>&lt;</button>
-      <button onClick={() => increment(1)} disabled={recipes.length < 10}>&gt;</button>
-      <h3>{name}</h3>
+      <button onClick={() => decrement()} disabled={offset === 0}>&lt;</button>
+      <button onClick={() => increment()} disabled={recipes.length < 20}>&gt;</button>
       <RecipeList recipeList={recipes} />
     </>
   );
