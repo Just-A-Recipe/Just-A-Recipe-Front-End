@@ -1,32 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 const Recipe = ({ image, title, ingredients, instructions }) => {
-  console.log(image, title);
   const instructionElements = instructions[0].steps.map(instruction => (
-    <li key={instruction.id}>
+    <div className='instructions-table' key={instruction.id}>
       <p> {instruction.step} </p>
-    </li>
+    </div>
   ));
+
   const ingredientsElements = ingredients.map(ingredient => (
-    <li key={ingredient.id}>
+    <div className='ingredients-table' key={ingredient.id}>
       <p> {ingredient.original}</p>
-    </li>
+    </div>
   ));
+
   return (
     <div>
       <div>
         <h2>{title}</h2>
-        <img src={`${image}`} />
+        <img className='detail-image' src={`${image}`} />
       </div>
-      <li>
+      <section>
         {ingredientsElements}
       </li>
       <ul>
         {instructionElements}
-      </ul>
+      </section>
     </div>
   );
 };
+
 Recipe.propTypes = {
   recipes: PropTypes.shape({
     image: PropTypes.string,
@@ -35,4 +38,5 @@ Recipe.propTypes = {
     instructions: PropTypes.arrayOf(PropTypes.object)
   }).isRequired
 };
+
 export default Recipe;
