@@ -13,8 +13,9 @@ const RecipeList = ({ recipeList }) => {
     </Link>
   ));
   const recipeTitle = recipeList.map(recipe => (
-    <li key={recipe.id}>
-    </li>
+    <div key={recipe.id}>
+
+    </div>
   ));
   return (
     <ul>
