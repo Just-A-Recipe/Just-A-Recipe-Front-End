@@ -9,21 +9,15 @@ const RecipeDetailViewer = ({ match }) => {
   useEffect(() => {
     fetchRecipe(match.params.id)
       .then(recipe => setRecipe(recipe));
-    console.log(match.params.id);
-    console.log(recipe);
-    console.log(match);
-    
       
   }, []);
 
   if(!recipe) 
     return <h1>Loading</h1>;
 
-  //will probably want to use recipe List formatted into an array
-
-
+  console.log(recipe.analyzedInstructions);
   return <Recipe 
-    title={recipe.image}
+    title={recipe.title}
     image={recipe.image}
     ingredients={recipe.extendedIngredients}
     instructions={recipe.analyzedInstructions}
