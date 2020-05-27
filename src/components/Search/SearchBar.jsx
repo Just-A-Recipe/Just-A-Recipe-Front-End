@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 
 
 
-const SearchBar = ({ searchQuery, onChange, onSearch, checked }) => (
+const SearchBar = ({ searchQuery, onChange, onSearch }) => (
   <section>
     <form onSubmit={onSearch}>
-      <input type="text" value={searchQuery} onChange={onChange} />
+      <input 
+        type="text" 
+        value={searchQuery} 
+        onChange={onChange} />
       <button>Search</button> 
-      <input type="checkbox" value={checked} />
     </form>
   </section>
 );
