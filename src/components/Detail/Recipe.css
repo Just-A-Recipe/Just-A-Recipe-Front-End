@@ -1,7 +1,22 @@
-.detail-image {
-    height: 30px;
-    width: 30px;
+/* .image {
+    height: 81vh;
+    width: 81vh;
+    float: center
+} */
+
+.title {
+    font-family: cursive;
+    font-size: xx-large;
+    text-decoration: underline aquamarine;
 }
-.ingredients-table {
-    float: left;
+
+.section {
+    text-align: center;
+    font-size: large;
+}
+
+.thingsTitle {
+    text-decoration: underline aquamarine;
+    text-transform: uppercase;
+    font-weight: bold;
 }

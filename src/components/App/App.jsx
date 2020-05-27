@@ -11,7 +11,6 @@ import Register from '../Register/Register';
 import About from '../About/About';
 
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import firebase from '../Firebase/Firebase';
 
 export default function App() {
@@ -35,7 +34,6 @@ export default function App() {
         <Route exact path="/about" component={About} />
         <Route exact path="/:id" component={RecipeDetailViewer} />
       </Switch>
-      <Footer />
     </Router>
   ) : <div>loading...</div>;
 }

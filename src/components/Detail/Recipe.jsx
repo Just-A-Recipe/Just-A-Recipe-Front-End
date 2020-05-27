@@ -1,13 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Recipe.css'
 
 const Recipe = ({ image, title, ingredients, instructions }) => {
-
-  
-
-  console.log(image, title);
-
-
   const instructionElements = instructions[0].steps.map(instruction => (
     <div className='instructions-table' key={instruction.id}>
       <p> {instruction.step} </p>
@@ -16,23 +11,21 @@ const Recipe = ({ image, title, ingredients, instructions }) => {
 
   const ingredientsElements = ingredients.map(ingredient => (
     <div className='ingredients-table' key={ingredient.id}>
-      <p> {ingredient.original}</p>
+      <p>{ingredient.original}</p>
     </div>
   ));
 
   return (
     <div>
       <div>
-        <h2>{title}</h2>
-        <img className='detail-image' src={`${image}`} />
+        <img className={styles.image} src={`${image}`} />
+        <h2 className={styles.title}>{title}</h2>
       </div>
-      <section>
-        <li>
-          {ingredientsElements}
-        </li>
-        <ul>
-          {instructionElements}
-        </ul>
+      <section className={styles.section}>
+        <p className={styles.thingsTitle}>Ingredients</p>
+        {ingredientsElements}
+        <p className={styles.thingsTitle}>Instructions</p>
+        {instructionElements}
       </section>
     </div>
   );
@@ -41,9 +34,9 @@ const Recipe = ({ image, title, ingredients, instructions }) => {
 Recipe.propTypes = {
   recipes: PropTypes.shape({
     image: PropTypes.string,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     ingredients: PropTypes.arrayOf(PropTypes.object),
-    instructions: PropTypes.arrayOf(PropTypes.object),
+    instructions: PropTypes.arrayOf(PropTypes.object)
   }).isRequired
 };
 
