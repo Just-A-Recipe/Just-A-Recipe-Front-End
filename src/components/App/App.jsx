@@ -18,6 +18,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={RecipeViewer} />
         <Route exact path="/:id" component={RecipeDetailViewer} />
+        {/* <Route exact path="/aboutus" component={AboutUs}/> */}
       </Switch>
       <Footer />
     </Router>

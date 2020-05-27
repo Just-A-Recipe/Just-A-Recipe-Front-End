@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
+import DorjeImg from '../assets/Dorje.JPG';
+import CodyImg from '../assets/Cody.JPG';
+import JamesImg from '../assets/James.JPG';
+import AnastasiaImg from '../assets/Anastasia.JPG';
+import SuriImg from '../assets/Suri.JPG';
 
 export default class AboutUs extends Component {
   render () {
@@ -8,40 +13,51 @@ export default class AboutUs extends Component {
       <div>
         <h1 className='heading'> Just a Recipe</h1>
         <div className='card-wrapper'>
+
           <div className='card'>
-            <img className='background' src={bCImage} alt=''/>
-            <img className='profile-img' src={codyImg} alt=''/>
+            <img className='profile-img' src={CodyImg} alt=''/>
             <h1> Cody</h1>
             <p className='job-title'>Software Engineer</p>
-            <p className='about'> Favorite Cocktail: 69 special </p>
-            <p className='contact'>Contact</p>
+            <p className='about'> Favorite Food: Steak and Lobster </p>
+            <a href="https://www.linkedin.com/in/codylylebrown/" target="_brel=" rel="noopener noreferrer"><FaLinkedinIn className="social-icon" /></a>
+            <a href="https://github.com/cody2934" target="_brel=" rel="noopener noreferrer"><FaGithub className="social-icon" /></a>
           </div>
+
           <div className='card'>
-            <img className='background' src={bCImage} alt=''/>
-            <img className='profile-img' src={suriImg} alt=''/>
+            <img className='profile-img' src={SuriImg} alt=''/>
             <h1> Surelis Segarra</h1>
             <p className='job-title'>Software Developer</p>
-            <p className='about'> Favorite Cocktail: Gin and Tonic </p>
+            <p className='about'> Favorite Food: Grilled Chicken and Plantain</p>
             <p className='contact'>Contact</p>
+
           </div>  <div className='card'>
-            <img className='background' src={bCImage} alt=''/>
-            <img className='profile-img' src={dorjeImg} alt=''/>
+            <img className='profile-img' src={DorjeImg} alt=''/>
             <h1> Dorje Kirsten </h1>
             <p className='job-title'>Software Developer</p>
-            <p className='about'> Favorite Cocktail: The Vesper Royale </p>
+            <p className='about'> Favorite Food: Spaghetti Carbonara</p>
             <p className='contact'>Contact</p>
           </div>
+
           <div className='card'>
-            <img className='background' src={bCImage} alt=''/>
-            <img className='profile-img' src={anastasiaImg} alt=''/>
+            <img className='profile-img' src={AnastasiaImg} alt=''/>
             <h1> Anastasia Morozova</h1>
             <p className='job-title'>Software Developer</p>
-            <p className='about'> Favorite Cocktail: Mezcal Margarita </p>
+            <p className='about'> Favorite Food: Sushi and Sashimi </p>
             <p className='contact'>Contact</p>
           </div>
         </div>
+
+        <div className='card'>
+          <img className='profile-img' src={JamesImg} alt=''/>
+          <h1>James Eserjose</h1>
+          <p className='job-title'>Software Developer</p>
+          <p className='about'> Favorite Food: Grilled Tri Tip</p>
+          <a href="https://www.linkedin.com/in/jamesreserjose/" target="_brel=" rel="noopener noreferrer"><FaLinkedinIn className="social-icon" /></a>
+          <a href="https://github.com/ezjim" target="_brel=" rel="noopener noreferrer"><FaGithub className="social-icon" /></a>
+        </div>
       </div>
+    
     );
-  }};
+  }}
 
 

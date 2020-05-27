@@ -18,8 +18,10 @@ const Recipe = ({ image, title, ingredients, instructions }) => {
         <h2>{title}</h2>
         <img src={`${image}`} />
       </div>
-      <ul>
+      <li>
         {ingredientsElements}
+      </li>
+      <ul>
         {instructionElements}
       </ul>
     </div>
