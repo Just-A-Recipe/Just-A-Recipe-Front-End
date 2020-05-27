@@ -1,8 +1,7 @@
-.Recipe {
-    img {
-        width: 300px;
-        position: relative;
-        float: left;
-    }
-
+.detail-image {
+    height: 30px;
+    width: 30px;
+}
+.ingredients-table {
+    float: left;
 }

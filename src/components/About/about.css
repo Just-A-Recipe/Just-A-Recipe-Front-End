@@ -1,0 +1,92 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 10px;
+  font-family: sans-serif;
+}
+.heading{
+  font-family: pacifico;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  margin-right: 3px;
+  margin-bottom: 5rem;
+  text-align: center;
+  color: black;
+  position: absolute;
+};
+.heading::after{
+  content: '';
+  width:10rem;
+  height:.8rem;
+  background-color: rgb(0, 225, 255);
+  position: absolute;
+  bottom:-2rem;
+  left:50%;
+  transform: translateX(-50%);
+  border-radius: 2rem;
+}
+.cardWrapper{
+display: flex;
+flex-flow: wrap;
+justify-content: space-evenly;
+
+
+}
+
+.card{
+  width: 30rem;
+  background-color: #ebeef8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20rem 0;
+  box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, 2);
+}
+.card .card-img{
+  width: 50%;
+  height: 26rem;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
+}
+.profileImg{
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+ 
+  margin-top: -11rem;
+  z-index: 999;
+  border:  1rem solid #ebeef8;
+}
+.card h1{
+  font-size: 2.5rem;
+  color: #333;
+  margin: 1.5rem 0;
+}
+.jobTitle{
+  color: #777;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.about{
+  font-size: 1.5rem;
+  margin: 1.5rem ;
+  font-style: italic;
+  text-align: center;
+  color: #333;
+}
+.container{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+}
+.socialIcon{
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border:  1rem  aquamarine;
+}
