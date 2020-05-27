@@ -1,0 +1,24 @@
+.myButton {
+  color: white; 
+  font-size: 1rem; 
+  border-radius: 15%; 
+  background-image: radial-gradient(at center center, rgb(66, 37, 160) 0%, rgb(40, 22, 96) 54%, rgb(66, 37, 160) 100%); 
+  border: 2px solid rgb(28, 110, 164); 
+  cursor: pointer;
+}
+.myButton:hover {
+  background: rgb(87, 65, 160); }
+.myButton:active {
+  background: rgb(79, 49, 179); }
+
+.myInput {
+  background-color: rgb(79, 49, 179);
+  color: aquamarine;
+  border: aquamarine;
+  font-style: italic;
+  /* background-color: white; */
+  /* background-image: url('https://cdn2.iconfinder.com/data/icons/font-awesome/1792/search-512.png'); */
+  /* background-position: 10px 10px; */
+  /* background-repeat: no-repeat; */
+  /* padding-left: 40px; */
+}

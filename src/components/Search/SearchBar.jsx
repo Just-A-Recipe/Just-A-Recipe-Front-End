@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './SearchBar.css';
 
 
 
 const SearchBar = ({ searchQuery, onChange, onSearch }) => (
   <section>
     <form onSubmit={onSearch}>
-      <input 
+      <input className={styles.myInput} 
         type="text" 
         value={searchQuery} 
         onChange={onChange} />
-      <button>Search</button> 
+      <button className={styles.myButton}>Search</button> 
     </form>
   </section>
 );
