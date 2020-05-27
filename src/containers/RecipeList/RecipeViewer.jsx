@@ -2,34 +2,28 @@ import React, { useState, useEffect } from 'react';
 import RecipeList from '../../components/RecipeList/RecipeList';
 import { fetchRecipes } from '../../services/spoonacular';
 import SearchBar from '../../components/Search/SearchBar';
-import firebase from '../../components/Firebase/Firebase'
+import firebase from '../../components/Firebase/Firebase';
 
 const RecipeViewer = () => {
   const [recipes, setRecipes] = useState(['']);
   const [searchQuery, setSearchQuery] = useState('');
   const [offset, setOffset] = useState(0);
+  const [name, setName] = useState('');
 
   useEffect(() => {
     fetchRecipes(searchQuery, offset)
       .then(fetchRecipes => setRecipes(fetchRecipes));
   }, [offset]);
 
-  const [searchQuery, setSearchQuery] = useState('')
-  const [name, setName] = useState('');
-
   if(!firebase.getCurrentUsername()){
     // do stuff if youre not signed in
   }
   
-  useEffect(() => 
-    fetchRecipes(searchQuery)
-      .then(fetchRecipes => {
-        setRecipes(fetchRecipes);
-        setName(firebase.getCurrentUsername());
-      }
-      );
-      
-  }, []);
+  useEffect(() => {
+    fetchRecipes(searchQuery, offset)
+      .then(fetchRecipes => setRecipes(fetchRecipes));
+    setName(firebase.getCurrentUsername());
+  }, [offset]);
 
   
   const onChange = ({ target }) => setSearchQuery(target.value);
