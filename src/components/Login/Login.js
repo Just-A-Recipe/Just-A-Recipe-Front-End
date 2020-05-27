@@ -23,9 +23,10 @@ function Login(props) {
     <div className="login-container">
       <div className="login-paper">
         <form id="login-form">
-          <input type="text" name="email" onChange={handleChange}>
+          <h1>Login</h1>
+          <input type="text" placeholder='email' name="email" onChange={handleChange}>
           </input>
-          <input type="text" name="password" onChange={handleChange}>
+          <input type="password" placeholder='password' name="password" onChange={handleChange}>
           </input>
           <button onClick={handleSubmit}>Submit</button>
         </form>
