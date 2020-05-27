@@ -1,38 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Recipe.css'
 
 const Recipe = ({ image, title, ingredients, instructions }) => {
-
-  
-
-  console.log(image, title);
-
-
+  // console.log(image, title);
   const instructionElements = instructions[0].steps.map(instruction => (
-    <div className='instructions-table' key={instruction.id}>
+    <div key={instruction.id}>
       <p> {instruction.step} </p>
     </div>
   ));
 
   const ingredientsElements = ingredients.map(ingredient => (
-    <div className='ingredients-table' key={ingredient.id}>
+    <div key={ingredient.id}>
       <p> {ingredient.original}</p>
     </div>
   ));
 
   return (
     <div>
-      <div>
-        <h2>{title}</h2>
-        <img className='detail-image' src={`${image}`} />
+
+      <div className={styles.imageDiv}>
+        <img className={styles.image} src={`${image}`} />
+        <h2 className={styles.mainTitle}>{title}</h2>
       </div>
-      <section>
-        <li>
+
+      <section className={styles.theSection}>
+
+        <div className={styles.ingredients}>
+          <p className={styles.titles}>Ingredients</p>
           {ingredientsElements}
-        </li>
-        <ul>
+        </div>
+
+        <div className={styles.instructions}>
+          <p className={styles.titles}>Instructions</p>
           {instructionElements}
-        </ul>
+        </div>
+
       </section>
     </div>
   );
