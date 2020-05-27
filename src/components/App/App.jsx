@@ -32,8 +32,8 @@ export default function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/" component={RecipeViewer} />
-        <Route exact path="/:id" component={RecipeDetailViewer} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/:id" component={RecipeDetailViewer} />
       </Switch>
       <Footer />
     </Router>

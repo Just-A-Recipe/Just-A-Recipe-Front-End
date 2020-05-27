@@ -50,8 +50,8 @@ const About = () => {
             <h1>Anastasia</h1>
             <p className={styles.jobTitle}>Software Developer</p>
             <p className={styles.about}> Favorite Food: Sushi and Sashimi </p>
-            <a href="https://www.linkedin.com/in/jamesreserjose/" target="_brel=" rel="noopener noreferrer"><FaLinkedinIn className={styles.socialIcon} /></a>
-            <a href="https://github.com/ezjim" target="_brel=" rel="noopener noreferrer"><FaGithub className={styles.socialIcon} /></a>
+            <a href="https://www.linkedin.com/in/morozova-anastasia/" target="_brel=" rel="noopener noreferrer"><FaLinkedinIn className={styles.socialIcon} /></a>
+            <a href="https://github.com/asiamorozova" target="_brel=" rel="noopener noreferrer"><FaGithub className={styles.socialIcon} /></a>
           </div>
         </div>
 
