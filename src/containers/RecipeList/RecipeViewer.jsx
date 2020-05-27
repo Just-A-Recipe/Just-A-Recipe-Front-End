@@ -12,15 +12,15 @@ const RecipeViewer = () => {
 
   if(!firebase.getCurrentUsername()){
     // do stuff if youre not signed in
-    alert('not signed in');
   }
   
   useEffect(() => {
     
     fetchRecipes(searchQuery)
       .then(fetchRecipes => {
-        setRecipes(fetchRecipes)
-        setName(firebase.getCurrentUsername())}
+        setRecipes(fetchRecipes);
+        setName(firebase.getCurrentUsername());
+      }
       );
       
   }, []);

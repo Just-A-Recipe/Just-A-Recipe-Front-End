@@ -8,7 +8,7 @@ function Register(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const handleSubmit = async (e) => {
-      e.preventDefault();
+    e.preventDefault();
     try {
       await firebase.register(name, email, password);
       props.history.replace('/');
@@ -20,11 +20,12 @@ function Register(props) {
     <div className="register-container">
       <div className="register-paper">
         <form id="register-form">
-          <input type="text" name="name" onChange={e => (setName(e.target.value))}>
+          <h1>Register</h1>
+          <input type="text" placeholder='name' name="name" onChange={e => (setName(e.target.value))}>
           </input>
-          <input type="text" name="email" onChange={e => setEmail(e.target.value)}>
+          <input type="text" placeholder='email' name="email" onChange={e => setEmail(e.target.value)}>
           </input>
-          <input type="text" name="password" onChange={e => setPassword(e.target.value)}>
+          <input type="password" placeholder='password' name="password" onChange={e => setPassword(e.target.value)}>
           </input>
           <button onClick={handleSubmit}>Submit</button>
         </form>
