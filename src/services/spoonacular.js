@@ -1,4 +1,6 @@
-const API_URL = 'https://just-a-recipe.herokuapp.com/api/v1/';
+
+const API_URL = `https://just-a-recipe.herokuapp.com/api/v1/`
+
 // const API_URL = 'http://localhost:7890/api/v1/';
 
 export const fetchRecipes = (searchQuery, offset) => {
