@@ -2,12 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Recipe = ({ image, title, ingredients, instructions }) => {
-
   
-
-  console.log(image, title);
-
-
   const instructionElements = instructions[0].steps.map(instruction => (
     <div className='instructions-table' key={instruction.id}>
       <p> {instruction.step} </p>
