@@ -65,8 +65,7 @@ const Recipe = ({ image, title, ingredients, instructions, id, match}) => {
         {favorite && <img onClick={() => handleDeleteFavorite(match.params.id)} className={styles.icon} src={secondFavIcon} alt=''/>}
 
         {message}
-
-        {/* <button onClick={() => handleDeleteFavorite(match.params.id)}>Remove Favorite</button> */}
+        
         <img className={styles.image} src={`${image}`} />
         <h2 className={styles.mainTitle}>{title}</h2>
       </div>
