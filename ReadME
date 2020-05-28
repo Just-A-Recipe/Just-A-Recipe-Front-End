@@ -1,83 +1,42 @@
-Landnig Page
-  Header
-    Title
-    Search {searchQuery gets sent to fetchRecipes}
-    Account
-  Random Cards with good pics {gets response from "randomly generated IDs" upon page load}
-  Footer
-    About Us Link
-    Alchemy Link
+*Header*
+responsive
+Logo
+Spacing below header so it isn't butted up and/or a line for seperation
+Move the Account stuff, same link would be cool
 
-Search Result Page
-  Header
-    Title
-    Search {searchQuery gets sent to fetchReipes}
-    Account
-  Results of Search {displays results of searchQuery. We store it by ID}
-  Footer
-    About Us Link
-    Alchemy Link
+*Footer*
+Glue to the bottom
+Contanct Us/About Us logo
+Something else fancy
 
-Recipe Detail Page
-  Header
-    Title
-    Search {searchQuery gets sent to fetchRecipes}
-    Account
-  Recipe Name (gotten from FetchRecipeById)
-  Ingredients (gotten from FetchRecipeById)
-  Instructions (gotten from FetchRecipeById)
-  Footer
-    About Us Link
-    Alchemy Link
+*Reciple List*
+Loading gif or spinner or thing as it shows everthing up
+Footer stays on the bottom
 
+*Recipe Detail*
+Background or something
+Header fixed
+Image Centered 
+Favorite star color change
+No longer show the id when favorited
+Footer stays on the bottom
 
-Landing Page
-  hardcoded random id fetch and display
-Search Result Page
-  displays "ID" based on seachQuery
-Recipe Detail Page
-  result from the ID seach (fetch)
+*Log in page*
+Footer stays on the bottom
 
+*Log out page*
+Footer stays on the bottom
 
-***API Fetches we have***
-fetchRecipes
-  takes our searchQuery from the search bar and returns a set number of responses
-  .get(`https://api.spoonacular.com/recipes/search?query=${searchQuery}&number=${resPP}&apiKey=${process.env.API_KEY}`)
-{
-"results": [
-{
-"id": 878183,
-"title": "Jack Daniel’s Grilled Steak",
-"image": "jack-daniels-grilled-steak-878183.jpg"
-}
-],
-"baseUri": "https://spoonacular.com/recipeImages/",
-"offset": 0,
-"number": 1,
-"totalResults": 860,
-"processingTimeMs": 479,
-"expires": 1590605943971
-}
-!!!!!!!!!!!!!!!!!!!!!!!!!in order to get the image we're going to have to take the baseUri+image!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*Register Page*
+Footer stays on the bottom
 
-fetchRecipe
-  takes the id and returns one recipe
-  fetch(`http://localhost:7890/api/v1/recipes/${id}`)
-  
-fetchSimilarRecipes
-  takes an ID and returns similiar recipes
-  .get(`https://api.spoonacular.com/recipes/${id}/similar?${process.env.API_KEY}`)
+*About us*
+bold or make sections so it doesn't look like a paragraph
 
+*Search*
+style checkboxes
 
-***API Fetches we need***
-fetchRandomRecipes
-  Looks for random recipes with good pictures
-  I think we're going to have to look ourselfs for recipes with good pics, get those IDs. Then hard code a couple different recipes and randomize our result for the page.
-
-fetchRecipeDetails
-  takes an id aand
-
-Containers:
-RecipeViewer - a look at all the recipes - takes in searchQuery and displays title and image (has ID)
-RecipeDetailViewer - a look at specific recipes - takes and ID and displays title, image, ingredients, measurements
-
+*Other*   *TONIGHT*
+Remove all commented out code and extra line spaces/returns
+Passing Tests
+Retype ReadMe to reflect project
