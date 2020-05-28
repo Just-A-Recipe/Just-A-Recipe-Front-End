@@ -21,6 +21,7 @@ const RecipeViewer = () => {
         .then(fetchRecipes => setRecipes(fetchRecipes));
     }
   }, [offset, checked]);
+
   
   if(!firebase.getCurrentUsername()){
    

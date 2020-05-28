@@ -6,10 +6,17 @@ import styles from './RecipeList.css';
 const RecipeList = ({ recipeList }) => {
   const recipeElements = recipeList.map(recipe => (
     <Link className={styles.RecipeList} key={recipe.id} to={`/${recipe.id}` }>
-      <li>
+      {/* <li>
         <img src={`https://spoonacular.com/recipeImages/${recipe.id}-312x231.jpg`}/>
         <h2>{recipe.title}</h2>
-      </li>
+      </li> */}
+      <div className={styles.cardSection}>
+        <div className={styles.card}>
+          <img className={styles.image} src={`https://spoonacular.com/recipeImages/${recipe.id}-312x231.jpg`}/>
+          <div className={styles.title}>{recipe.title}</div>
+        </div>
+      </div>
+
     </Link>
   ));
   const recipeTitle = recipeList.map(recipe => (
@@ -19,10 +26,10 @@ const RecipeList = ({ recipeList }) => {
     
   ));
   return (
-    <ul>
+    <div className={styles.cardContainer}>
       {recipeElements}
-      {recipeTitle}
-    </ul>
+      {/* {recipeTitle} */}
+    </div>
   );
 };
 RecipeList.propTypes = {
