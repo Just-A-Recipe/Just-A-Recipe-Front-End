@@ -57,6 +57,20 @@ section {
   text-align: center;
 }
 
+.label {
+  display: inline-block;
+  position: relative;
+  font-size: 1.5rem;
+  padding-right: .6rem;
+  padding-left: .6rem;
+  cursor: pointer;
+  font-family: fantasy;
+  font-weight: bold;
+}
+.checkbox {
+  cursor: pointer;
+  margin-right: .2rem;
+}
 
 
 
