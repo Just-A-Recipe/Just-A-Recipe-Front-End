@@ -6,8 +6,8 @@ const allergy = ['Seafood', 'Dairy', 'Gluten', 'Grain', 'Peanut', 'Sesame',  'Sh
 
 const SearchBar = ({ searchQuery, onChange, onSearch, checked }) => {
   const checkboxElements = allergy.map(option => (
-    <label key={option}>
-      <input className={style.inputField} type="checkbox" value={option} onClick={checked}></input>
+    <label className={style.label}key={option}>
+      <input className={style.checkbox} type="checkbox" value={option} onClick={checked}></input>
       {option} Free 
     </label>
   ));
@@ -15,7 +15,7 @@ const SearchBar = ({ searchQuery, onChange, onSearch, checked }) => {
   return (
     <section className={style.section}>
       <form onSubmit={onSearch}>
-        <input type="text" value={searchQuery} onChange={onChange} />
+        <input className={style.inputField} type="text" value={searchQuery} onChange={onChange} />
         <button className={style.searchButton}>Search</button> 
         {checkboxElements}    
       </form>
