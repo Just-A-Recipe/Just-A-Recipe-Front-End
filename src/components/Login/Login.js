@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './login.css';
-import { Link, withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom';
 import firebase from '../../components/Firebase/Firebase';
 import PropTypes from 'prop-types';
 
