@@ -30,7 +30,7 @@ function Register(props) {
               </input>
               <input className={styles.input} type="password" placeholder='password' name="password" onChange={e => setPassword(e.target.value)}>
               </input>
-              <button className={styles.submit} onClick={handleSubmit}>Submit</button>
+              <button className={styles.submit} onClick={handleSubmit}>Register</button>
             </form>
           </div>
         </div>
