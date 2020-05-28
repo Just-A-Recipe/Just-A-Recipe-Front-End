@@ -13,12 +13,23 @@
 }
 .link
 {
-    padding: 8px;
-    color: black;
-    text-decoration: none;
-    font-size: 17px;
-    width: 15%; 
-    text-align: center;
-    background-color: aquamarine; 
+  padding: 8px;
+  color: black;
+  text-decoration: none;
+  font-size: 17px;
+  width: 15%; 
+  text-align: center;
+  background-color: aquamarine; 
   
 }
+.UserControls {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+/* button {
+    width: 90px;
+    height: 70px;
+  } */

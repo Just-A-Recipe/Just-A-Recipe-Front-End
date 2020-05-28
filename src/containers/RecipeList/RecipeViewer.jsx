@@ -3,7 +3,7 @@ import RecipeList from '../../components/RecipeList/RecipeList';
 import { fetchRecipes, fetchIntolerances } from '../../services/spoonacular';
 import SearchBar from '../../components/Search/SearchBar';
 import firebase from '../../components/Firebase/Firebase';
-import { string } from 'prop-types';
+import style from './RecipeViewer.css';
 
 const RecipeViewer = () => {
   const [recipes, setRecipes] = useState(['']);
@@ -54,8 +54,11 @@ const RecipeViewer = () => {
     return (
       <>
         <SearchBar searchQuery={searchQuery} onChange={onChange} onSearch={onSearch} checked={handleChecked} />
-        <button onClick={() => decrement()} disabled={offset === 0}>&lt;</button>
-        <button onClick={() => increment()} disabled={recipes.length < 20}>&gt;</button>
+
+        <button className={style.pagingBackButton} onClick={() => decrement()} disabled={offset === 0}>&lt;</button>
+
+        <button className={style.pagingForwardButton} onClick={() => increment()} disabled={recipes.length < 20}>&gt;</button>
+
         <RecipeList recipeList={recipes} />
       </>
     );
