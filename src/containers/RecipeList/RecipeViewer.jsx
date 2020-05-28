@@ -21,15 +21,8 @@ const RecipeViewer = () => {
   }, [offset, checked]);
 
   if(!firebase.getCurrentUsername()){
-    // do stuff if youre not signed in
+    // do stuff if not logged in
   }
-  
-  // useEffect(() => {
-  //   fetchRecipes(searchQuery, offset)
-  //     .then(fetchRecipes => setRecipes(fetchRecipes));
-  //   setName(firebase.getCurrentUsername());
-  // }, [offset]);
-   
   const onChange = ({ target }) => setSearchQuery(target.value);
 
   const onSearch = (e) => {
@@ -51,8 +44,11 @@ const RecipeViewer = () => {
   return (
     <>
       <SearchBar searchQuery={searchQuery} onChange={onChange} onSearch={onSearch} checked={handleChecked} />
+
       <button onClick={() => decrement()} disabled={offset === 0}>&lt;</button>
+
       <button onClick={() => increment()} disabled={recipes.length < 20}>&gt;</button>
+
       <RecipeList recipeList={recipes} />
     </>
   );

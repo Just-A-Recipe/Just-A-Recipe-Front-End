@@ -7,13 +7,13 @@ import PropTypes from 'prop-types';
 function Login(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const handleChange = (e) => {
-    e.target.value === 'email' ? setEmail(e.target.value) : null;
-    e.target.value === 'password' ? setPassword(e.target.value) : null;
-  };
+
   const handleSubmit = async(e) => {
+    e.preventDefault();
+    
     try {
       await firebase.login(email, password);
+      
       props.history.replace('/');
     } catch(error) {
       console.error(error);
@@ -25,9 +25,9 @@ function Login(props) {
       <div className={styles.loginPaper}>
         <div className={styles.card}>
           <form id="login-form">
-            <input className={styles.input} type="text" placeholder='email' name="email" onChange={handleChange}>
+            <input className={styles.input} type="text" placeholder='email' name="email" onChange={(e) => {setEmail(e.target.value)}}>
             </input>
-            <input className={styles.input} type="password" placeholder='password' name="password" onChange={handleChange}>
+            <input className={styles.input} type="password" placeholder='password' name="password" onChange={(e) => {setPassword(e.target.value)}}>
             </input>
             <button className={styles.submit} onClick={handleSubmit}>Submit</button>
           </form>
