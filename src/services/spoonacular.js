@@ -26,7 +26,7 @@ export const fetchRecipe = (id) => {
     }));
 };
 
-export const fetchRecipeImage = (image, id)  => {
+export const fetchRecipeImage = (image)  => {
   return fetch(`https://just-a-recipe.herokuapp.com/ap/v1/recipeimages/${id}-312x231.jpg`)
     .then(res => res.json(image))
     .then(json => ({
