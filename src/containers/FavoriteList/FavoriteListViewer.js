@@ -9,7 +9,7 @@ export default function FavoriteListViewer() {
 
   useEffect(() => {
     getUserFavorites(firebase.getCurrentEmail())
-      .then(favorites => setRecipes(favorites));
+      .then(favorites => setRecipes(favorites.body));
   }, [offset]);
 
   const decrement = () => setOffset(prevPage => prevPage - 20);

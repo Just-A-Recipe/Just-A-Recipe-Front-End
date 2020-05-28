@@ -21,36 +21,37 @@ const RecipeViewer = () => {
   }, [offset, checked]);
 
   if(!firebase.getCurrentUsername()){
-   
-    const onChange = ({ target }) => setSearchQuery(target.value);
-
-    const onSearch = (e) => {
-      e.preventDefault();
-      if(checked) {
-        console.log('string');
-        fetchGlutenFree(searchQuery, offset).then(fetchGlutenFree =>   setRecipes(fetchGlutenFree));
-      } else {
-        fetchRecipes(searchQuery, offset)
-          .then(fetchRecipes => setRecipes(fetchRecipes));
-      }
-    };
-
-    const handleChecked = () => setChecked(!checked);
-
-    const decrement = () => setOffset(prevPage => prevPage - 20);
-    const increment = () => setOffset(prevPage => prevPage + 20);
-    // const message = firebase.getCurrentUsername ? `Welcome ${firebase.getCurrentUsername}` : null;
-    return (
-      <>
-        <SearchBar searchQuery={searchQuery} onChange={onChange} onSearch={onSearch} checked={handleChecked} />
-
-        <button onClick={() => decrement()} disabled={offset === 0}>&lt;</button>
-
-        <button onClick={() => increment()} disabled={recipes.length < 20}>&gt;</button>
-
-        <RecipeList recipeList={recipes} />
-      </>
-    );
+    // do stuff if not logged in
   }
+  const onChange = ({ target }) => setSearchQuery(target.value);
+
+  const onSearch = (e) => {
+    e.preventDefault();
+    if(checked) {
+      console.log('string');
+      fetchGlutenFree(searchQuery, offset).then(fetchGlutenFree =>   setRecipes(fetchGlutenFree));
+    } else {
+      fetchRecipes(searchQuery, offset)
+        .then(fetchRecipes => setRecipes(fetchRecipes));
+    }
+  };
+
+  const handleChecked = () => setChecked(!checked);
+
+  const decrement = () => setOffset(prevPage => prevPage - 20);
+  const increment = () => setOffset(prevPage => prevPage + 20);
+  // const message = firebase.getCurrentUsername ? `Welcome ${firebase.getCurrentUsername}` : null;
+  return (
+    <>
+      <SearchBar searchQuery={searchQuery} onChange={onChange} onSearch={onSearch} checked={handleChecked} />
+
+      <button onClick={() => decrement()} disabled={offset === 0}>&lt;</button>
+
+      <button onClick={() => increment()} disabled={recipes.length < 20}>&gt;</button>
+
+      <RecipeList recipeList={recipes} />
+    </>
+  );
 };
+
 export default RecipeViewer;

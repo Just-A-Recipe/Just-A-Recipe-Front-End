@@ -1,23 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { fetchRecipe, fetchRecipeImage } from '../../services/spoonacular';
 
 const FavoriteList = ({ favoriteList }) => {
-  const favoriteElement = favoriteList.map(favorite => (
-    <Link key={favorite.id}>
+//   let currRecipe = await fetchRecipe(favorite.recipeId);
+//   let currRecipeImage = await fetchRecipeImage(favorite.recipeId);
+  const favoriteElement = favoriteList.map((favorite) => (
+    <Link key={favorite.id} /*to={`/${currRecipe.id}`}*/>
       <li>
         <img src={`https://spoonacular.com/recipeImages/${favorite.id}-312x231.jpg`}/>
         <h2>{favorite.title}</h2>
       </li>
     </Link>
-  ));
+  )
+  );
   const favoriteTitle = favoriteList.map(favorite => (
     <div key={favorite.id}></div>
   ));
   return (
     <ul>
       {favoriteElement}
-      {favoriteTitle}
+      {/* {favoriteTitle} */}
     </ul>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Header.css';
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink, withRouter, Link } from 'react-router-dom';
 import firebase from '../Firebase/Firebase';
 import { getUserFavorites } from '../../services/spoonacular';
 
@@ -25,8 +25,11 @@ const Header = (props) => {
     <>
       {loggedIn ?  
         (<div className={styles.UserControls}>
-          <button onClick={() => getUserFavorites(firebase.getCurrentEmail())}>See Favorites</button>
+
+          <Link onClick={() => getUserFavorites(firebase.getCurrentEmail())} to='/favorites'>See Favorites</Link>
+
           <button onClick={() => handleLogout()}>Log Out</button>
+
         </div>) : null}
       <div className={styles.headerDiv}>
         <h1>Just a Recipe</h1>
