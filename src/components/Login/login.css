@@ -1,6 +1,9 @@
 .loginContainer {
-    align-items: left;
-    justify-content: left;
+    /* align-items: center;
+    justify-content: center; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .loginPaper {
     align-items: left;
@@ -19,10 +22,13 @@
     background-color: #ebeef8;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
     margin: 15rem 0;
     box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, 2);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     }
 .header{
     font-family: pacifico;
