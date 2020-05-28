@@ -1,6 +1,4 @@
-
-const API_URL = `https://just-a-recipe.herokuapp.com/api/v1/`
-
+const API_URL = 'https://just-a-recipe.herokuapp.com/api/v1/';
 // const API_URL = 'http://localhost:7890/api/v1/';
 
 export const fetchRecipes = (searchQuery, offset) => {
@@ -17,7 +15,6 @@ export const fetchRecipes = (searchQuery, offset) => {
 
 export const fetchRecipe = (id) => {
   return fetch(`${API_URL}recipes/${id}`)
-  
     .then(res => res.json())
     .then(json => ({
       title: json.title,
@@ -28,16 +25,16 @@ export const fetchRecipe = (id) => {
     }));
 };
 
-export const fetchRecipeImage = image => {
-  return fetch (`${API_URL}recipeimages/${id}-312x231.jpg`)
+export const fetchRecipeImage = (image, id)  => {
+  return fetch(`https://just-a-recipe.herokuapp.com/ap/v1/recipeimages/${id}-312x231.jpg`)
     .then(res => res.json(image))
     .then(json => ({
       image: json.image
     }));
 };
 
-export const fetchGlutenFree = (searchQuery, offset) => {
-  return fetch(`https://just-a-recipe.herokuapp.com/api/v1/recipes/?searchQuery=${searchQuery}&offset=${offset}&intolerances=Gluten`)
+export const fetchIntolerances = (searchQuery, offset, intolerances) => {
+  return fetch(`${API_URL}recipes/?searchQuery=${searchQuery}&offset=${offset}&intolerances=${intolerances}`)
     .then(res => res.json())
     .then(json => json.map(({ id, title, image, extendedIngredients, analyzedInstructions }) => ({
       id,
@@ -48,7 +45,6 @@ export const fetchGlutenFree = (searchQuery, offset) => {
     })));
 };
 
-
 export const addFavorite = (userEmail, recipeId) => {
   return fetch (`${API_URL}favorites`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ userEmail: userEmail, recipeId: recipeId }) })
     .then(res => 
@@ -57,11 +53,8 @@ export const addFavorite = (userEmail, recipeId) => {
     .then(json => ({
       message: 'Recipe added successfully',
       id: json.recipeId
-
     })).catch((err) => {
-     
     });
-
 };
 
 export const deleteFavorite = (favId) => {
@@ -78,5 +71,4 @@ export const getUserFavorites = (userEmail) => {
       body: json
       // console.log(JSON.stringify(json))
     }));
- 
 };
