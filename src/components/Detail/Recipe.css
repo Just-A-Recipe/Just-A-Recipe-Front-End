@@ -1,36 +1,47 @@
+
+
 .mainTitle {
     font-weight: bold; 
     font-family: cursive;   
-    font-size: xx-large;
+    font-size: 4.5em;
+    margin-top: 17px;
+    margin-bottom: 17px;
 }
 
 .titles {
-    text-decoration: underline aquamarine;
+    text-decoration: underline salmon;
     font-size: x-large;
 }
-
-.ingredients {
+.icon {
+    width: 20px;
+    position: relative;
+    /* float: right; */
+}
+.ingredients, .instructions {
     text-align: center;
-    width: 30vw;
+    width: 35vw;
+    font-size: large;
+    
 }
 
-.instructions {
+/* .instructions {
     text-align: center;
-    width: 30vw;
-}
+    width: 35vw;
+} */
 
 .imageDiv {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%
+    width: 50vh;
 }
-/* .image {
-    display: block;
-    justify-content: center;
-    height: 300px;
-    width: auto;
-} */
+.image {
+    border-radius: 20px;
+    border-top: 20px solid #FFA384;
+    border-right: 20px solid #EFE7BC;
+    border-bottom: 20px solid #74BDCB;
+    border-left: 20px solid #E7F2F8
+}
 
 .theSection {
     display: flex;
