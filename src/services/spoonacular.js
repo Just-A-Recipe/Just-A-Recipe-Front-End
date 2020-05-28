@@ -34,6 +34,19 @@ export const fetchRecipeImage = image => {
     }));
 };
 
+export const fetchGlutenFree = (searchQuery, offset) => {
+  return fetch(`https://just-a-recipe.herokuapp.com/api/v1/recipes/?searchQuery=${searchQuery}&offset=${offset}&intolerances=Gluten`)
+    .then(res => res.json())
+    .then(json => json.map(({ id, title, image, extendedIngredients, analyzedInstructions }) => ({
+      id,
+      title,
+      image,
+      extendedIngredients,
+      analyzedInstructions
+    })));
+};
+
+
 export const addFavorite = (userEmail, recipeId) => {
   return fetch (`${API_URL}favorites`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ userEmail: userEmail, recipeId: recipeId }) })
     .then(res => 

@@ -4,20 +4,20 @@ import imgIcon from '../../assets/favorite.png';
 // import secondFavIcon from '../../assets/star.png';
 import { addFavorite } from '../../services/spoonacular';
 import firebase from '../Firebase/Firebase';
-
-import styles from './Recipe.css';
+  
+import styles from './Recipe.css'
 
 const Recipe = ({ image, title, ingredients, instructions, id }) => {
-
+  // console.log(image, title);
   const [ message, setMessage ] = useState('');
   const instructionElements = instructions[0].steps.map(instruction => (
-    <div className='instructions-table' key={instruction.id}>
+    <div key={instruction.id}>
       <p> {instruction.step} </p>
     </div>
   ));
 
   const ingredientsElements = ingredients.map(ingredient => (
-    <div className='ingredients-table' key={ingredient.id}>
+    <div key={ingredient.id}>
       <p> {ingredient.original}</p>
     </div>
   ));
@@ -27,26 +27,30 @@ const Recipe = ({ image, title, ingredients, instructions, id }) => {
         
         setMessage(`${res.id} Added to Favorites!`);
       }).catch(err => {
+        console.error(err)
       });
   };
   return (
     <div>
-      <div className={styles.Recipe} >
-        <h2>{title}</h2>
-        
-        <img onClick={() => handleAddFavorite(id)} className={styles.icon} src={imgIcon} alt=''/>
-        
-        {/* <img className={styles.icon} src={secondFavIcon} alt=''/> */}
-        <img className={styles.detailImg}  src={`${image}`} />
-        {message}
+      <div className={styles.imageDiv}>
+      <img onClick={() => handleAddFavorite(id)} className={styles.icon} src={imgIcon} alt=''/>
+      {message}
+        <img className={styles.image} src={`${image}`} />
+        <h2 className={styles.mainTitle}>{title}</h2>
       </div>
-      <section>
-        <li>
+
+      <section className={styles.theSection}>
+
+        <div className={styles.ingredients}>
+          <p className={styles.titles}>Ingredients</p>
           {ingredientsElements}
-        </li>
-        <ul className={styles.instructions} >
+        </div>
+
+        <div className={styles.instructions}>
+          <p className={styles.titles}>Instructions</p>
           {instructionElements}
-        </ul>
+        </div>
+
       </section>
     </div>
   );

@@ -1,8 +1,56 @@
-.login-container {
-    align-items: center;
-    justify-content: center;
+.loginContainer {
+    /* align-items: center;
+    justify-content: center; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-.login-paper {
+.loginPaper {
+    align-items: left;
     height: 400px;
-    width: 500px;
+    width: 100%;
 }
+/* .cardWrapper{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    position: relative;
+    } */
+    
+.card{
+    width: 20%;
+    background-color: #ebeef8;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
+    margin: 15rem 0;
+    box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, 2);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+.header{
+    font-family: pacifico;
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    margin-right: 3px;
+    margin-bottom: 5rem;
+    text-align: center;
+    color: black;
+    position: relative;
+    }
+.submit {
+    height: 5rem;
+    width: 19rem;
+    background-color: #ff6e65; 
+}
+.input{
+    height: 5rem;
+    width: 19rem;
+}
+.submit a:hover {
+    background-color: #ddd;
+    color: black;
+  }

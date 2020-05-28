@@ -3,8 +3,6 @@ import styles from './Header.css';
 import { NavLink } from 'react-router-dom';
 import firebase from '../Firebase/Firebase';
 
-
-
 export default class Header extends Component {
   // state = {
   //   loggedIn: false
