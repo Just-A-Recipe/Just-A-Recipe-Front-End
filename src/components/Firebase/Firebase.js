@@ -18,13 +18,13 @@ const firebaseConfig = {
 
 class Firebase {
   constructor() {
-    app.initializeApp(firebaseConfig)
-    this.auth = app.auth()
-    this.db = app.firestore()
+    app.initializeApp(firebaseConfig);
+    this.auth = app.auth();
+    this.db = app.firestore();
   }
 //the this. auth... is the firebase api 
   login(email, password) {
-    return this.auth.signInWithEmailAndPassword(email, password)
+    return this.auth.signInWithEmailAndPassword(email, password);
   }
 
   logout() {
@@ -32,8 +32,8 @@ class Firebase {
   }
 
   async register(name, email, password) {
-    console.log(name, email, password)
-    await this.auth.createUserWithEmailAndPassword(email, password)
+    console.log(name, email, password);
+    await this.auth.createUserWithEmailAndPassword(email, password);
     
     return this.auth.currentUser.updateProfile({
       displayName: name
@@ -45,6 +45,14 @@ class Firebase {
     return new Promise(resolve => {
       this.auth.onAuthStateChanged(resolve);
     });
+  }
+
+  onAuthStateChanged(fn) {
+    return this.auth.onAuthStateChanged(fn);
+  }
+
+  getCurrentEmail() {
+    return this.auth.currentUser && this.auth.currentUser.email;
   }
 
   getCurrentUsername() {

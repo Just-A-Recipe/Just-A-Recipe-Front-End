@@ -21,6 +21,7 @@ const RecipeDetailViewer = ({ match }) => {
     image={recipe.image}
     ingredients={recipe.extendedIngredients}
     instructions={recipe.analyzedInstructions}
+    id={match.params.id}
   />;
 };
 
