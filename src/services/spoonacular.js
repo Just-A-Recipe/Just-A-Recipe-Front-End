@@ -1,5 +1,5 @@
-// const API_URL = `https://just-a-recipe.herokuapp.com/api/v1/`
-const API_URL = 'http://localhost:7890/api/v1/';
+const API_URL = 'https://just-a-recipe.herokuapp.com/api/v1/';
+// const API_URL = 'http://localhost:7890/api/v1/';
 
 export const fetchRecipes = (searchQuery, offset) => {
   return fetch(`${API_URL}recipes/?searchQuery=${searchQuery}&offset=${offset}`)
@@ -18,6 +18,7 @@ export const fetchRecipe = (id) => {
   
     .then(res => res.json())
     .then(json => ({
+      id,
       title: json.title,
       image: json.image,
       extendedIngredients: json.extendedIngredients,
