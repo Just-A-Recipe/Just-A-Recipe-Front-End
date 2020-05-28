@@ -9,7 +9,6 @@ import RecipeDetailViewer from '../../containers/RecipeDetailViewer/RecipeDetail
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import About from '../About/About';
-
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import firebase from '../Firebase/Firebase';
@@ -27,7 +26,6 @@ export default function App() {
   return firebaseInitialized !== false ? (
     <Router>
       <Header />
-
       <Switch>
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
@@ -37,7 +35,7 @@ export default function App() {
       </Switch>
       <Footer />
     </Router>
-  ) : <div>loading...</div>;
+  ) : <div>Loading...</div>;
 }
 
 
