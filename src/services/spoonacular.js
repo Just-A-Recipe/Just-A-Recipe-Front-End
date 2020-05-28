@@ -71,5 +71,4 @@ export const getUserFavorites = (userEmail) => {
       body: json
       // console.log(JSON.stringify(json))
     }));
- 
 };

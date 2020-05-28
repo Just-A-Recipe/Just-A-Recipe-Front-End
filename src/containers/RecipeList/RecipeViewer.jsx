@@ -54,11 +54,8 @@ const RecipeViewer = () => {
     return (
       <>
         <SearchBar searchQuery={searchQuery} onChange={onChange} onSearch={onSearch} checked={handleChecked} />
-
         <button className={style.pagingBackButton} onClick={() => decrement()} disabled={offset === 0}>&lt;</button>
-
         <button className={style.pagingForwardButton} onClick={() => increment()} disabled={recipes.length < 20}>&gt;</button>
-
         <RecipeList recipeList={recipes} />
       </>
     );
