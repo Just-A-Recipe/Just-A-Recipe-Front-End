@@ -12,7 +12,11 @@
     text-decoration: underline salmon;
     font-size: x-large;
 }
-
+.icon {
+    width: 20px;
+    position: relative;
+    /* float: right; */
+}
 .ingredients, .instructions {
     text-align: center;
     width: 35vw;

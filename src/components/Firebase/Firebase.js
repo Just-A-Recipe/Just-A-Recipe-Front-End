@@ -47,6 +47,10 @@ class Firebase {
     });
   }
 
+  getCurrentEmail() {
+    return this.auth.currentUser && this.auth.currentUser.email;
+  }
+
   getCurrentUsername() {
     return this.auth.currentUser && this.auth.currentUser.displayName;
   }
