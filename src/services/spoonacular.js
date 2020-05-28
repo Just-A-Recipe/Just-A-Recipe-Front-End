@@ -1,5 +1,5 @@
-// const API_URL = `https://just-a-recipe.herokuapp.com/api/v1/`
-const API_URL = 'http://localhost:7890/api/v1/';
+const API_URL = 'https://just-a-recipe.herokuapp.com/api/v1/';
+// const API_URL = 'http://localhost:7890/api/v1/';
 
 export const fetchRecipes = (searchQuery, offset) => {
   return fetch(`${API_URL}recipes/?searchQuery=${searchQuery}&offset=${offset}`)
@@ -33,8 +33,8 @@ export const fetchRecipeImage = (image, id)  => {
     }));
 };
 
-export const fetchGlutenFree = (searchQuery, offset) => {
-  return fetch(`https://just-a-recipe.herokuapp.com/api/v1/recipes/?searchQuery=${searchQuery}&offset=${offset}&intolerances=Gluten`)
+export const fetchIntolerances = (searchQuery, offset, intolerances) => {
+  return fetch(`${API_URL}recipes/?searchQuery=${searchQuery}&offset=${offset}&intolerances=${intolerances}`)
     .then(res => res.json())
     .then(json => json.map(({ id, title, image, extendedIngredients, analyzedInstructions }) => ({
       id,
