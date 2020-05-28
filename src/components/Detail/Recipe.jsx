@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import imgIcon from '../../assets/favorite.png';
-// import secondFavIcon from '../../assets/star.png';
+import secondFavIcon from '../../assets/star.png';
 import {  withRouter } from 'react-router-dom';
 import { addFavorite, deleteFavorite, getUserFavorites } from '../../services/spoonacular';
 import firebase from '../Firebase/Firebase';
@@ -10,8 +10,9 @@ import styles from './Recipe.css'
 
 const Recipe = ({ image, title, ingredients, instructions, id, match}) => {
   // console.log(image, title);
-  const [ message, setMessage ] = useState('');
-  const [favArr, setFavArr] = useState();
+  const [message, setMessage] = useState('');
+  const [favorite, setFavorite] = useState(false);
+
   const instructionElements = instructions[0].steps.map(instruction => (
     <div key={instruction.id}>
       <p> {instruction.step} </p>
@@ -24,7 +25,7 @@ const Recipe = ({ image, title, ingredients, instructions, id, match}) => {
     </div>
   ));
   const handleAddFavorite = (id) => {
-    console.log(firebase.getCurrentEmail())
+    setFavorite(true);
     addFavorite(firebase.getCurrentEmail(), parseInt(id))
       .then(res => {
         if(!firebase.getCurrentEmail()){
@@ -38,6 +39,7 @@ const Recipe = ({ image, title, ingredients, instructions, id, match}) => {
   };
   const handleDeleteFavorite = (id) => {
     let favId;
+    setFavorite(false);
     getUserFavorites(firebase.getCurrentEmail())
       .then((res)=> {
       // setFavArr(res)
@@ -54,12 +56,16 @@ const Recipe = ({ image, title, ingredients, instructions, id, match}) => {
           });
       });
   };
+
+  
   return (
     <div>
       <div className={styles.imageDiv}>
-        <img onClick={() => handleAddFavorite(id)} className={styles.icon} src={imgIcon} alt=''/>
+        {!favorite && <img onClick={() => handleAddFavorite(id)} className={styles.icon} src={imgIcon} alt=''/>}
+        {favorite && <img onClick={() => handleDeleteFavorite(match.params.id)} className={styles.icon} src={secondFavIcon} alt=''/>}
+
         {message}
-        <button onClick={() => handleDeleteFavorite(match.params.id)}>Remove Favorite</button>
+        
         <img className={styles.image} src={`${image}`} />
         <h2 className={styles.mainTitle}>{title}</h2>
       </div>
