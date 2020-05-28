@@ -17,7 +17,7 @@ html{
   text-align: center;
   color: black;
   position: absolute;
-};
+}
 .heading::after{
   content: '';
   width:10rem;
@@ -33,8 +33,6 @@ html{
 display: flex;
 flex-flow: wrap;
 justify-content: space-evenly;
-
-
 }
 
 .card{
@@ -54,8 +52,8 @@ justify-content: space-evenly;
   clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
 }
 .profileImg{
-  width: 20rem;
-  height: 20rem;
+  width: 30rem;
+  height: 30rem;
   object-fit: cover;
  
   margin-top: -11rem;

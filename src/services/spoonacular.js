@@ -1,5 +1,10 @@
+
+const API_URL = `https://just-a-recipe.herokuapp.com/api/v1/`
+
+// const API_URL = 'http://localhost:7890/api/v1/';
+
 export const fetchRecipes = (searchQuery, offset) => {
-  return fetch(`http://localhost:7890/api/v1/recipes/?searchQuery=${searchQuery}&offset=${offset}`)
+  return fetch(`${API_URL}recipes/?searchQuery=${searchQuery}&offset=${offset}`)
     .then(res => res.json())
     .then(json => json.map(({ id, title, image, extendedIngredients, analyzedInstructions }) => ({
       id,
@@ -11,7 +16,7 @@ export const fetchRecipes = (searchQuery, offset) => {
 };
 
 export const fetchRecipe = (id) => {
-  return fetch(`http://localhost:7890/api/v1/recipes/${id}`)
+  return fetch(`${API_URL}recipes/${id}`)
   
     .then(res => res.json())
     .then(json => ({
@@ -21,16 +26,57 @@ export const fetchRecipe = (id) => {
       analyzedInstructions: json.analyzedInstructions,
       instructions: json.instructions
     }));
-  // console.log(analyzedInstructions);
-  
-  
 };
-console.log();
 
 export const fetchRecipeImage = image => {
-  return fetch (`http://localhost:7890/ap/v1/recipeimages/${id}-312x231.jpg`)
+  return fetch (`${API_URL}recipeimages/${id}-312x231.jpg`)
     .then(res => res.json(image))
     .then(json => ({
       image: json.image
     }));
+};
+
+export const fetchGlutenFree = (searchQuery, offset) => {
+  return fetch(`https://just-a-recipe.herokuapp.com/api/v1/recipes/?searchQuery=${searchQuery}&offset=${offset}&intolerances=Gluten`)
+    .then(res => res.json())
+    .then(json => json.map(({ id, title, image, extendedIngredients, analyzedInstructions }) => ({
+      id,
+      title,
+      image,
+      extendedIngredients,
+      analyzedInstructions
+    })));
+};
+
+
+export const addFavorite = (userEmail, recipeId) => {
+  return fetch (`${API_URL}favorites`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ userEmail: userEmail, recipeId: recipeId }) })
+    .then(res => 
+      res.json()
+    )
+    .then(json => ({
+      message: 'Recipe added successfully',
+      id: json.recipeId
+
+    })).catch((err) => {
+     
+    });
+
+};
+
+export const deleteFavorite = (favId) => {
+  return fetch (`${API_URL}favorites/${favId}`, { method: 'DELETE' })
+    .then(res => res.json())
+    .then(json => ({
+      message: json.message
+    }));
+};
+
+export const getUserFavorites = (userEmail) => {
+  return fetch (`${API_URL}favorites/${userEmail}`)
+    .then(res => res.json()).then((json) => ({
+      body: json
+      // console.log(JSON.stringify(json))
+    }));
+ 
 };
