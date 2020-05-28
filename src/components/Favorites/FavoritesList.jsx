@@ -7,9 +7,9 @@ const FavoriteList = ({ favoriteList }) => {
 //   let currRecipe = await fetchRecipe(favorite.recipeId);
 //   let currRecipeImage = await fetchRecipeImage(favorite.recipeId);
   const favoriteElement = favoriteList.map((favorite) => (
-    <Link key={favorite.id} /*to={`/${currRecipe.id}`}*/>
+    <Link key={favorite.id} to={`/${favorite.id}`}>
       <li>
-        <img src={`https://spoonacular.com/recipeImages/${favorite.id}-312x231.jpg`}/>
+        <img src={favorite.image}/>
         <h2>{favorite.title}</h2>
       </li>
     </Link>
