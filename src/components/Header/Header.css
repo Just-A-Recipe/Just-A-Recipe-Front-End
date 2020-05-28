@@ -22,3 +22,13 @@
     background-color: aquamarine; 
   
 }
+.UserControls {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  button {
+    width: 90px;
+    height: 70px;
+  }
+}

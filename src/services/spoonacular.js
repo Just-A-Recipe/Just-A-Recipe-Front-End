@@ -62,8 +62,8 @@ export const addFavorite = (userEmail, recipeId) => {
 
 };
 
-export const deleteFavorite = (recipeId) => {
-  return fetch (`${API_URL}favorites/${recipeId}`, { method: 'DELETE' })
+export const deleteFavorite = (favId) => {
+  return fetch (`${API_URL}favorites/${favId}`, { method: 'DELETE' })
     .then(res => res.json())
     .then(json => ({
       message: json.message
@@ -72,6 +72,9 @@ export const deleteFavorite = (recipeId) => {
 
 export const getUserFavorites = (userEmail) => {
   return fetch (`${API_URL}favorites/${userEmail}`)
-    .then(res => res.json());
+    .then(res => res.json()).then((json) => ({
+      body: json
+      // console.log(JSON.stringify(json))
+    }));
  
 };
