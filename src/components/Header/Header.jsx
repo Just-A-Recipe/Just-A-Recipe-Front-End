@@ -1,29 +1,26 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Header.css';
 import { NavLink, withRouter } from 'react-router-dom';
 import firebase from '../Firebase/Firebase';
 import { getUserFavorites } from '../../services/spoonacular';
 
-const Header = () => {
-  const [loggedIn, setLoggedIn] = useState(false)
+const Header = (props) => {
+  const [loggedIn, setLoggedIn] = useState(false);
+
   useEffect(() => {
-    console.log('header', firebase.getCurrentUsername())
+   
     if(firebase.getCurrentUsername()){
-      console.log('here', firebase.getCurrentUsername())
-      setLoggedIn(true)
+      setLoggedIn(true);
     }
   }, []);
+
   const handleLogout = () => {
     firebase.logout();
     setLoggedIn(false);
+    props.history.push('/');
   };
-  
-  // const logoutBtn = loggedIn ?  
-  //   (<div className={styles.UserControls}>
-  //     <button onClick={() => firebase.logout()}>Log Out</button>
-  //   </div>) : null;
 
-  const loginLogout = loggedIn ? null : <NavLink to="/login" className={styles.link}>Log In   </NavLink>;
+  const loginLogout = loggedIn ? null : <NavLink to="/login" className={styles.link}>Log In</NavLink>;
   return (
     <>
       {loggedIn ?  
@@ -44,4 +41,5 @@ const Header = () => {
   
 };
 
-export default withRouter(Header)
+export default withRouter(Header);
+

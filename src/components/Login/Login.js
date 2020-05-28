@@ -7,16 +7,13 @@ import PropTypes from 'prop-types';
 function Login(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const handleChange = (e) => {
-  //   e.target.value === 'email' ? setEmail(e.target.value) : null;
-  //   e.target.value === 'password' ? setPassword(e.target.value) : null;
-  // };
+
   const handleSubmit = async(e) => {
-    e.preventDefault()
-    console.log('email, password');
+    e.preventDefault();
+    
     try {
       await firebase.login(email, password);
-      console.log(email, password)
+      
       props.history.replace('/');
     } catch(error) {
       console.error(error);
