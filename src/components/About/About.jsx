@@ -32,8 +32,8 @@ const About = () => {
             <h1>Suri</h1>
             <p className={styles.jobTitle}>Software Developer</p>
             <p className={styles.about}>Born in Puerto Rico, speaks Spanish and English. Favorite Food: Grilled Chicken and Plantain</p>
-            <a href="https://www.linkedin.com/in/jamesreserjose/" target="_brel=" rel="noopener noreferrer"><FaLinkedinIn className={styles.socialIcon} /></a>
-            <a href="https://github.com/ezjim" target="_brel=" rel="noopener noreferrer"><FaGithub className={styles.socialIcon} /></a>
+            <a href="https://www.linkedin.com/in/surelis-segarra-bbbba3186/" target="_brel=" rel="noopener noreferrer"><FaLinkedinIn className={styles.socialIcon} /></a>
+            <a href="https://github.com/SuriSegarra" target="_brel=" rel="noopener noreferrer"><FaGithub className={styles.socialIcon} /></a>
           </div>   
           
           <div className={styles.card}>
