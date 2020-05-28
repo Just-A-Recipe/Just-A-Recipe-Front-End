@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import style from './SearchBar.css';
+import style from './SearchBar.css';
 
 const SearchBar = ({ searchQuery, onChange, onSearch, checked }) => (
-  <section>
+  <section className={style.section}>
     <form onSubmit={onSearch}>
-      <input type="text" value={searchQuery} onChange={onChange} />
-      <button>Search</button> 
+        <input className={style.inputField} type="text" value={searchQuery} onChange={onChange} />
+        <button className={style.searchButton}>Search</button> 
       <label>
         <input type="checkbox" onClick={checked}></input>
       GlutenFree</label>
