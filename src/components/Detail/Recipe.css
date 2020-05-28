@@ -6,6 +6,8 @@
     font-size: 4.5em;
     margin-top: 17px;
     margin-bottom: 17px;
+    text-align: center;
+
 }
 
 .titles {
@@ -21,7 +23,8 @@
     text-align: center;
     width: 35vw;
     font-size: large;
-    
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 /* .instructions {
@@ -35,6 +38,7 @@
     margin-right: auto;
     width: 50vh;
 }
+
 .image {
     border-radius: 20px;
     border-top: 20px solid #FFA384;
