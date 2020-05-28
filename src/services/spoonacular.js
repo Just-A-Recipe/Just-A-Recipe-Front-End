@@ -23,7 +23,7 @@ export const fetchRecipe = (id) => {
   // console.log(analyzedInstructions);
 };
 
-export const fetchRecipeImage = image => {
+export const fetchRecipeImage = (image, id)  => {
   return fetch(`https://just-a-recipe.herokuapp.com/ap/v1/recipeimages/${id}-312x231.jpg`)
     .then(res => res.json(image))
     .then(json => ({
@@ -42,7 +42,6 @@ export const fetchGlutenFree = (searchQuery, offset) => {
       analyzedInstructions
     })));
 };
-
 
 export const addFavorite = (userEmail, recipeId) => {
   return fetch ('https://just-a-recipe.herokuapp.com/ap/v1/favorites', { method: 'POST', body: { userEmail: userEmail, recipeId: recipeId } })
