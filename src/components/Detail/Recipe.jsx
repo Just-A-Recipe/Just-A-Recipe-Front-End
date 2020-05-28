@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import imgIcon from '../../assets/favorite.png';
+// import secondFavIcon from '../../assets/star.png';
+import { addFavorite } from '../../services/spoonacular';
+import firebase from '../Firebase/Firebase';
 
-const Recipe = ({ image, title, ingredients, instructions }) => {
+import styles from './Recipe.css';
 
-  
+const Recipe = ({ image, title, ingredients, instructions, id }) => {
 
-  console.log(image, title);
-
-
+  const [ message, setMessage ] = useState('');
   const instructionElements = instructions[0].steps.map(instruction => (
     <div className='instructions-table' key={instruction.id}>
       <p> {instruction.step} </p>
@@ -19,18 +21,30 @@ const Recipe = ({ image, title, ingredients, instructions }) => {
       <p> {ingredient.original}</p>
     </div>
   ));
-
+  const handleAddFavorite = (id) => {
+    addFavorite(firebase.getCurrentEmail(), parseInt(id))
+      .then(res => {
+        
+        setMessage(`${res.id} Added to Favorites!`);
+      }).catch(err => {
+      });
+  };
   return (
     <div>
-      <div>
+      <div className={styles.Recipe} >
         <h2>{title}</h2>
-        <img className='detail-image' src={`${image}`} />
+        
+        <img onClick={() => handleAddFavorite(id)} className={styles.icon} src={imgIcon} alt=''/>
+        
+        {/* <img className={styles.icon} src={secondFavIcon} alt=''/> */}
+        <img className={styles.detailImg}  src={`${image}`} />
+        {message}
       </div>
       <section>
         <li>
           {ingredientsElements}
         </li>
-        <ul>
+        <ul className={styles.instructions} >
           {instructionElements}
         </ul>
       </section>

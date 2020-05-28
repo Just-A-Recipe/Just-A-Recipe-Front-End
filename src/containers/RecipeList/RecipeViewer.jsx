@@ -40,6 +40,7 @@ const RecipeViewer = () => {
   return (
     <>
       <SearchBar searchQuery={searchQuery} onChange={onChange} onSearch={onSearch}/>
+      {/* {firebase.getCurrentEmail()} */}
       <button onClick={() => decrement()} disabled={offset === 0}>&lt;</button>
       <button onClick={() => increment()} disabled={recipes.length < 20}>&gt;</button>
       <RecipeList recipeList={recipes} />

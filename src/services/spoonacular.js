@@ -1,5 +1,8 @@
+// const API_URL = `https://just-a-recipe.herokuapp.com/api/v1/`
+const API_URL = 'http://localhost:7890/api/v1/';
+
 export const fetchRecipes = (searchQuery, offset) => {
-  return fetch(`https://just-a-recipe.herokuapp.com/api/v1/recipes/?searchQuery=${searchQuery}&offset=${offset}`)
+  return fetch(`${API_URL}recipes/?searchQuery=${searchQuery}&offset=${offset}`)
     .then(res => res.json())
     .then(json => json.map(({ id, title, image, extendedIngredients, analyzedInstructions }) => ({
       id,
@@ -11,7 +14,7 @@ export const fetchRecipes = (searchQuery, offset) => {
 };
 
 export const fetchRecipe = (id) => {
-  return fetch(`https://just-a-recipe.herokuapp.com/api/v1/recipes/${id}`)
+  return fetch(`${API_URL}recipes/${id}`)
   
     .then(res => res.json())
     .then(json => ({
@@ -21,11 +24,10 @@ export const fetchRecipe = (id) => {
       analyzedInstructions: json.analyzedInstructions,
       instructions: json.instructions
     }));
-  // console.log(analyzedInstructions);
 };
 
 export const fetchRecipeImage = image => {
-  return fetch (`https://just-a-recipe.herokuapp.com/ap/v1/recipeimages/${id}-312x231.jpg`)
+  return fetch (`${API_URL}recipeimages/${id}-312x231.jpg`)
     .then(res => res.json(image))
     .then(json => ({
       image: json.image
@@ -33,18 +35,22 @@ export const fetchRecipeImage = image => {
 };
 
 export const addFavorite = (userEmail, recipeId) => {
-  return fetch ('https://just-a-recipe.herokuapp.com/ap/v1/favorites', { method: 'POST', body: { userEmail: userEmail, recipeId: recipeId } })
-    .then(res => res.json())
+  return fetch (`${API_URL}favorites`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ userEmail: userEmail, recipeId: recipeId }) })
+    .then(res => 
+      res.json()
+    )
     .then(json => ({
       message: 'Recipe added successfully',
-      id: json.id
+      id: json.recipeId
 
-    }));
+    })).catch((err) => {
+     
+    });
 
 };
 
 export const deleteFavorite = (recipeId) => {
-  return fetch (`https://just-a-recipe.herokuapp.com/ap/v1/favorites/${recipeId}`, { method: 'DELETE' })
+  return fetch (`${API_URL}favorites/${recipeId}`, { method: 'DELETE' })
     .then(res => res.json())
     .then(json => ({
       message: json.message
@@ -52,7 +58,7 @@ export const deleteFavorite = (recipeId) => {
 };
 
 export const getUserFavorites = (userEmail) => {
-  return fetch (`https://just-a-recipe.herokuapp.com/ap/v1/favorites/${userEmail}`)
+  return fetch (`${API_URL}favorites/${userEmail}`)
     .then(res => res.json());
  
 };

@@ -1,7 +1,15 @@
-.detail-image {
-    height: 30px;
-    width: 30px;
+.detailImg {
+    /* height: 30px; */
+    width: 300px;
 }
 .ingredients-table {
     float: left;
+}
+.icon {
+    width: 20px;
+    position: relative;
+    /* float: right; */
+}
+.instructions {
+    font-size: 20px;
 }
