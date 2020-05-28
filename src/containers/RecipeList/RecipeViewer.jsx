@@ -19,6 +19,7 @@ const RecipeViewer = () => {
         .then(fetchRecipes => setRecipes(fetchRecipes));
     }
   }, [offset, checked]);
+  if(!fetchRecipes) return <h1>Loading</h1>;
   if(!firebase.getCurrentUsername()){
     // do stuff if youre not signed in
   }
@@ -37,6 +38,7 @@ const RecipeViewer = () => {
       fetchRecipes(searchQuery, offset)
         .then(fetchRecipes => setRecipes(fetchRecipes));
     }
+    if(!fetchRecipes) return <h1>Loading</h1>;
   };
   const handleChecked = ({ target }) => {
     if(target.checked) {
@@ -61,3 +63,5 @@ const RecipeViewer = () => {
   );
 };
 export default RecipeViewer;
+
+
