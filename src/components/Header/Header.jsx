@@ -20,7 +20,8 @@ const Header = () => {
     history.push('/');
   };
 
-  const loginLogout = loggedIn ? null : <NavLink to="/login" className={styles.link}>Log In</NavLink>;
+  // const loginLogout = loggedIn ? null : <NavLink to="/login" className={styles.link}>Log In</NavLink>;
+  
   return (
     <>
       {loggedIn ?  
@@ -31,8 +32,9 @@ const Header = () => {
       <div className={styles.headerDiv}>
         <img className={styles.logo} src={Logo} alt=''/>
         <NavLink to="/" className={styles.link}>Recipes</NavLink> 
-        {loginLogout}
+        {/* {loginLogout} */}
         <NavLink to="/register" className={styles.link}>Register</NavLink>
+        <NavLink to="/login" className={styles.link}>Log In</NavLink>
         <NavLink to="/about" className={styles.link}>Contact Us</NavLink> 
       </div>
     </>
