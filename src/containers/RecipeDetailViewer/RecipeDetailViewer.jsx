@@ -5,17 +5,12 @@ import Recipe from '../../components/Detail/Recipe';
 
 const RecipeDetailViewer = ({ match }) => {
   const [recipe, setRecipe] = useState(null);
-
   useEffect(() => {
     fetchRecipe(match.params.id)
       .then(recipe => setRecipe(recipe));
-      
   }, []);
-
   if(!recipe) 
     return <h1>Loading</h1>;
-
-  console.log(recipe.analyzedInstructions);
   return <Recipe 
     title={recipe.title}
     image={recipe.image}
