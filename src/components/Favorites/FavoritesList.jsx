@@ -2,26 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { fetchRecipe, fetchRecipeImage } from '../../services/spoonacular';
+import style from './FavoriteList.css';
 
 const FavoriteList = ({ favoriteList }) => {
 
   const favoriteElement = favoriteList.map((favorite) => (
-    <Link key={favorite.id} to={`/${favorite.id}`}>
-      <li>
-        <img src={favorite.image}/>
-        <h2>{favorite.title}</h2>
-      </li>
+    <Link className={style.RecipeList} key={favorite.id} to={`/${favorite.id}`}>
+      <div className={style.cardSection}>
+        <div className={style.card}>
+          <img className={style.image} src={favorite.image}/>
+          <h2 className={style.title}>{favorite.title}</h2>
+        </div>
+      </div>
     </Link>
   )
   );
+  
   const favoriteTitle = favoriteList.map(favorite => (
     <div key={favorite.id}></div>
   ));
   return (
-    <ul>
+    <div className={style.cardContainer}>
       {favoriteElement}
       {/* {favoriteTitle} */}
-    </ul>
+    </div>
   );
 };
 

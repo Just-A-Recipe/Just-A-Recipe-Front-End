@@ -6,20 +6,16 @@ import { getUserFavorites } from '../../services/spoonacular';
 
 const Header = () => {
   const { history } = useHistory();
-
   const [user, setUser] = useState(null); 
   const loggedIn = !!user;
-
   useEffect(() => {
     return firebase.onAuthStateChanged(user => {
       setUser(user);
     });
   }, []);
-console.log(user);
 
   const handleLogout = () => {
     firebase.logout();
-  
     history.push('/');
   };
 
@@ -28,24 +24,18 @@ console.log(user);
     <>
       {loggedIn ?  
         (<div className={styles.UserControls}>
-
           <Link onClick={() => getUserFavorites(firebase.getCurrentEmail())} to='/favorites'>See {user.displayName} Favorites</Link>
-
           <button onClick={() => handleLogout()}>Log Out</button>
-
         </div>) : null}
       <div className={styles.headerDiv}>
         <h1>Just a Recipe</h1>
-        <NavLink to="/" className={styles.link}>Recipes  </NavLink> 
+        <NavLink to="/" className={styles.link}>Recipes</NavLink> 
         {loginLogout}
-        <NavLink to="/register" className={styles.link}>Register   </NavLink>
-        <NavLink to="/about" className={styles.link}>About Us</NavLink> 
+        <NavLink to="/register" className={styles.link}>Register</NavLink>
+        <NavLink to="/about" className={styles.link}>Contact Us</NavLink> 
       </div>
     </>
-  );
-    
-  
+  );   
 };
 
 export default withRouter(Header);
-

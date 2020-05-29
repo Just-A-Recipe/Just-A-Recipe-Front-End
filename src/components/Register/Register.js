@@ -17,6 +17,7 @@ function Register(props) {
       console.error(error);
     }
   };
+
   return (
     <div className={styles.registerContainer}>
       <div className={styles.backgroundImage}>
@@ -44,4 +45,3 @@ Register.propTypes = {
 };
 
 export default withRouter(Register);
-
