@@ -1,34 +1,19 @@
 *Header*
-responsive
 Logo
-Spacing below header so it isn't butted up and/or a line for seperation
 Move the Account stuff, same link would be cool
 
 *Footer*
-Glue to the bottom
-Contanct Us/About Us logo
+Contact Us/About Us logo
 Something else fancy
 
 *Reciple List*
 Loading gif or spinner or thing as it shows everthing up
-Footer stays on the bottom
+Catch if no results
 
 *Recipe Detail*
 Background or something
-Header fixed
 Image Centered 
-Favorite star color change
 No longer show the id when favorited
-Footer stays on the bottom
-
-*Log in page*
-Footer stays on the bottom
-
-*Log out page*
-Footer stays on the bottom
-
-*Register Page*
-Footer stays on the bottom
 
 *About us*
 bold or make sections so it doesn't look like a paragraph
