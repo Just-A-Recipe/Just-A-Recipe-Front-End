@@ -33,7 +33,11 @@
     border-top: 20px solid #FFA384;
     border-right: 20px solid #EFE7BC;
     border-bottom: 20px solid #74BDCB;
-    border-left: 20px solid #E7F2F8
+    border-left: 20px solid #E7F2F8;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 .theSection {
     display: flex;
