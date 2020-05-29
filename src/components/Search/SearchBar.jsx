@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from './SearchBar.css';
 
-const allergy = ['Seafood', 'Dairy', 'Gluten', 'Grain', 'Peanut', 'Sesame',  'Shellfish', 'Soy', 'Sulfite', 'Wheat'];
+const allergy = ['Seafood', 'Egg', 'Dairy', 'Gluten', 'Grain', 'Peanut', 'Sesame',  'Shellfish', 'Soy', 'Sulfite', 'Wheat'];
 const SearchBar = ({ searchQuery, onChange, onSearch, checked }) => {
   const checkboxElements = allergy.map(option => (
     <label className={style.label}key={option}>
