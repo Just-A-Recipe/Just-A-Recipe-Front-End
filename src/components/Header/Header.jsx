@@ -6,7 +6,6 @@ import { getUserFavorites } from '../../services/spoonacular';
 
 const Header = () => {
   const { history } = useHistory();
-
   const [user, setUser] = useState(null); 
   const loggedIn = !!user;
 
@@ -36,10 +35,10 @@ console.log(user);
         </div>) : null}
       <div className={styles.headerDiv}>
         <h1>Just a Recipe</h1>
-        <NavLink to="/" className={styles.link}>Recipes  </NavLink> 
+        <NavLink to="/" className={styles.link}>Recipes</NavLink> 
         {loginLogout}
-        <NavLink to="/register" className={styles.link}>Register   </NavLink>
-        <NavLink to="/about" className={styles.link}>About Us</NavLink> 
+        <NavLink to="/register" className={styles.link}>Register</NavLink>
+        <NavLink to="/about" className={styles.link}>Contact Us</NavLink> 
       </div>
     </>
   );
