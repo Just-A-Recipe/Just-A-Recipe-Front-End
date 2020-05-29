@@ -9,31 +9,31 @@ const RecipeViewer = () => {
   const [recipes, setRecipes] = useState(['']);
   const [searchQuery, setSearchQuery] = useState('');
   const [offset, setOffset] = useState(0);
+  // eslint-disable-next-line no-unused-vars
   const [name, setName] = useState('');
   const [checked, setChecked] = useState([]);
   useEffect(() => {
     if(checked.length > 0) {
       const intString = checked.join(',');
-      fetchIntolerances(searchQuery, offset, intString).then(fetchIntolerances =>   setRecipes(fetchIntolerances));
+      fetchIntolerances(searchQuery, offset, intString).then(fetchIntolerances => setRecipes(fetchIntolerances));
     } else {
       fetchRecipes(searchQuery, offset)
         .then(fetchRecipes => setRecipes(fetchRecipes));
     }
   }, [offset, checked]);
-  if(!firebase.getCurrentUsername()){
-  }
-  useEffect(() => {
-    fetchRecipes(searchQuery, offset)
-      .then(fetchRecipes => setRecipes(fetchRecipes));
-    setName(firebase.getCurrentUsername());
-  }, [offset]);
+  if(!firebase.getCurrentUsername())
+    useEffect(() => {
+      fetchRecipes(searchQuery, offset)
+        .then(fetchRecipes => setRecipes(fetchRecipes));
+      setName(firebase.getCurrentUsername());
+    }, [offset]);
 
   const onChange = ({ target }) => setSearchQuery(target.value);
   const onSearch = (e) => {
     e.preventDefault();
     if(checked.length > 0) {
       const intString = checked.join(',');
-      fetchIntolerances(searchQuery, offset, intString).then(fetchIntolerances =>   setRecipes(fetchIntolerances));
+      fetchIntolerances(searchQuery, offset, intString).then(fetchIntolerances => setRecipes(fetchIntolerances));
     } else {
       fetchRecipes(searchQuery, offset)
         .then(fetchRecipes => setRecipes(fetchRecipes));
