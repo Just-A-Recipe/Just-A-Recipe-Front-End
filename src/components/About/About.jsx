@@ -32,7 +32,7 @@ const About = () => {
           <div className={styles.card}>
             <img className={styles.profileImg} src={DorjeImg} alt=''/>
             <h1>Dorje</h1>
-            <p className={styles.jobTitle}>Software Developer</p>
+            <p className={styles.jobTitle}>Software Engineer</p>
             <p className={styles.about}> Born in New Mexico<br />Speaks a little Tibetan & English<br />Favorite Food: Spaghetti Carbonara</p>
             <a href="https://www.linkedin.com/in/dorjekirsten/" target="_brel=" rel="noopener noreferrer"><FaLinkedinIn className={styles.socialIcon} /></a>
             <a href="https://github.com/dorjepadma" target="_brel=" rel="noopener noreferrer"><FaGithub className={styles.socialIcon} /></a>
@@ -40,7 +40,7 @@ const About = () => {
           <div className={styles.card}>
             <img className={styles.profileImg} src={AnastasiaImg} alt=''/>
             <h1>Anastasia</h1>
-            <p className={styles.jobTitle}>Software Developer</p>
+            <p className={styles.jobTitle}>Software Engineer</p>
             <p className={styles.about}> Born in Russia <br />Speaks Russian, French & English <br />Favorite Food: Sushi & Sashimi </p>
             <a href="https://www.linkedin.com/in/morozova-anastasia/" target="_brel=" rel="noopener noreferrer"><FaLinkedinIn className={styles.socialIcon} /></a>
             <a href="https://github.com/asiamorozova" target="_brel=" rel="noopener noreferrer"><FaGithub className={styles.socialIcon} /></a>
@@ -48,7 +48,7 @@ const About = () => {
           <div className={styles.card}>
             <img className={styles.profileImg} src={JamesImg} alt=''/>
             <h1>James</h1>
-            <p className={styles.jobTitle}>Software Developer</p>
+            <p className={styles.jobTitle}>Software Engineer</p>
             <p className={styles.about}> Born in the Philippines<br />Speaks Tagalog & English <br />Favorite Food: Jasmine Rice</p> 
             <a href="https://www.linkedin.com/in/jamesreserjose/" target="_brel=" rel="noopener noreferrer"><FaLinkedinIn className={styles.socialIcon} /></a>
             <a href="https://github.com/ezjim" target="_brel=" rel="noopener noreferrer"><FaGithub className={styles.socialIcon} /></a> 

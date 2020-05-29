@@ -5,11 +5,9 @@
 }
 .registerContainer {
   height: 25vh;
-
   display: block;
   margin-left: auto;
   margin-right: auto;
-  
 }
 .loginPaper {
   align-items: left;
@@ -39,7 +37,7 @@
   border-radius:5%
 }
 .header {
-  font-family: pacifico;
+  /* font-family: pacifico; */
   text-transform: uppercase;
   font-size: 3.5rem;
   letter-spacing: .3rem;

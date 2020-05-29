@@ -1,6 +1,6 @@
 .headerDiv {
   display: block;
-  font-family: pacifico;
+  /* font-family: pacifico; */
   font-size: x-large;
   background-color: aquamarine;
   color: black;
@@ -16,9 +16,18 @@
   width: 15%; 
   text-align: center;
   background-color: aquamarine; 
+  position: relative;
+  right: 100px;
 }
 .UserControls {
   position: absolute;
   top: 0;
   right: 0;
+}
+.logo {
+  position: relative;
+  left: 180px;
+}
+.name{
+  display: none;
 }

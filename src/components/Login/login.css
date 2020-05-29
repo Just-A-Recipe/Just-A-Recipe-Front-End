@@ -22,7 +22,7 @@
     /* margin-top: 1.6rem; */
     background-size: 100%;
     background-repeat: no-repeat;
-    top: 0;
+    /* top: 0; */
 }  
 .card {
     width: 20%;
@@ -37,7 +37,7 @@
     border-radius:5%
 }
 .header {
-    font-family: pacifico;
+    /* font-family: pacifico; */
     text-transform: uppercase;
     font-size: 3.5rem;
     letter-spacing: .3rem;
