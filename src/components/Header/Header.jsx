@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Header.css';
-import { NavLink, withRouter, Link } from 'react-router-dom';
+import { NavLink, withRouter, Link, useHistory } from 'react-router-dom';
 import firebase from '../Firebase/Firebase';
 import { getUserFavorites } from '../../services/spoonacular';
 
-const Header = (props) => {
-  const [loggedIn, setLoggedIn] = useState(false);
+const Header = () => {
+  const { history } = useHistory();
+
+  const [user, setUser] = useState(null); 
+  const loggedIn = !!user;
 
   useEffect(() => {
-   
-    if(firebase.getCurrentUsername()){
-      setLoggedIn(true);
-    }
+    return firebase.onAuthStateChanged(user => {
+      setUser(user);
+    });
   }, []);
+console.log(user);
 
   const handleLogout = () => {
     firebase.logout();
-    setLoggedIn(false);
-    props.history.push('/');
+  
+    history.push('/');
   };
 
   const loginLogout = loggedIn ? null : <NavLink to="/login" className={styles.link}>Log In</NavLink>;
@@ -26,7 +29,7 @@ const Header = (props) => {
       {loggedIn ?  
         (<div className={styles.UserControls}>
 
-          <Link onClick={() => getUserFavorites(firebase.getCurrentEmail())} to='/favorites'>See Favorites</Link>
+          <Link onClick={() => getUserFavorites(firebase.getCurrentEmail())} to='/favorites'>See {user.displayName} Favorites</Link>
 
           <button onClick={() => handleLogout()}>Log Out</button>
 

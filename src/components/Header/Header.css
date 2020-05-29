@@ -1,5 +1,4 @@
-.headerDiv 
-{
+.headerDiv {
   display: block;
   font-family: pacifico;
   font-size: x-large;
@@ -7,28 +6,21 @@
   color: black;
   text-align: center;
   padding: 1vh;
-  margin-top: -8px;
-  margin-left: -7px;
-  margin-right: -7px
+  margin-bottom: 1rem
 }
-.link
-{
-    padding: 8px;
-    color: black;
-    text-decoration: none;
-    font-size: 17px;
-    width: 15%; 
-    text-align: center;
-    background-color: aquamarine; 
-  
+
+.link {
+  padding: 8px;
+  color: black;
+  text-decoration: none;
+  font-size: 17px;
+  width: 15%; 
+  text-align: center;
+  background-color: aquamarine; 
 }
+
 .UserControls {
   position: absolute;
   top: 0;
   right: 0;
-
-  button {
-    width: 90px;
-    height: 70px;
-  }
 }

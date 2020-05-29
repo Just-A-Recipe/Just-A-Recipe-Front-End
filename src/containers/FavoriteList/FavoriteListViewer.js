@@ -2,14 +2,19 @@ import React, { useState, useEffect } from 'react';
 import FavoriteList from '../../components/Favorites/FavoritesList';
 import {  getUserFavorites } from '../../services/spoonacular';
 import firebase from '../../components/Firebase/Firebase';
+import { fetchRecipe } from '../../services/spoonacular';
 
 export default function FavoriteListViewer() {
-  const [recipes, setRecipes] = useState(['']);
+  const [recipes, setRecipes] = useState([]);
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
     getUserFavorites(firebase.getCurrentEmail())
-      .then(favorites => setRecipes(favorites.body));
+      .then(favorites => {
+      //  console.log(favorites);
+        return Promise.all(favorites.body.map(recipeObj => fetchRecipe(recipeObj.recipeId)));
+      })
+      .then(fetchRecipes => setRecipes(fetchRecipes));
   }, [offset]);
 
   const decrement = () => setOffset(prevPage => prevPage - 20);

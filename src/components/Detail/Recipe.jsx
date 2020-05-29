@@ -1,17 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import imgIcon from '../../assets/favorite.png';
-// import secondFavIcon from '../../assets/star.png';
-import {  withRouter } from 'react-router-dom';
+import secondFavIcon from '../../assets/star.png';
+import {  withRouter, useParams } from 'react-router-dom';
 import { addFavorite, deleteFavorite, getUserFavorites } from '../../services/spoonacular';
 import firebase from '../Firebase/Firebase';
   
-import styles from './Recipe.css'
+import styles from './Recipe.css';
 
-const Recipe = ({ image, title, ingredients, instructions, id, match}) => {
+const Recipe = ({ image, title, ingredients, instructions, id }) => {
   // console.log(image, title);
-  const [ message, setMessage ] = useState('');
-  const [favArr, setFavArr] = useState();
+  const [message, setMessage] = useState('');
+  const [favorite, setFavorite] = useState(false);
+ 
+  useEffect(() => {
+    getUserFavorites(firebase.getCurrentEmail())
+      .then(fetchedFavorite => {
+        console.log(fetchedFavorite);
+        const isFavorite = fetchedFavorite.body.some(({ recipeId }) => recipeId === +id);
+        setFavorite(isFavorite);
+      });
+  }, []);
+
   const instructionElements = instructions[0].steps.map(instruction => (
     <div key={instruction.id}>
       <p> {instruction.step} </p>
@@ -24,7 +34,7 @@ const Recipe = ({ image, title, ingredients, instructions, id, match}) => {
     </div>
   ));
   const handleAddFavorite = (id) => {
-    console.log(firebase.getCurrentEmail())
+    setFavorite(true);
     addFavorite(firebase.getCurrentEmail(), parseInt(id))
       .then(res => {
         if(!firebase.getCurrentEmail()){
@@ -38,9 +48,9 @@ const Recipe = ({ image, title, ingredients, instructions, id, match}) => {
   };
   const handleDeleteFavorite = (id) => {
     let favId;
+    setFavorite(false);
     getUserFavorites(firebase.getCurrentEmail())
       .then((res)=> {
-      // setFavArr(res)
         res.body.forEach(fav => {
           if(fav.recipeId == id) {
             favId = fav._id;
@@ -54,12 +64,21 @@ const Recipe = ({ image, title, ingredients, instructions, id, match}) => {
           });
       });
   };
+
+  // useEffect(() => {
+  //   getUserFavorites(firebase.getCurrentEmail())
+  //   setFavorite()
+  // });
+  
   return (
     <div>
       <div className={styles.imageDiv}>
-        <img onClick={() => handleAddFavorite(id)} className={styles.icon} src={imgIcon} alt=''/>
+
+        {!favorite && <img onClick={() => handleAddFavorite(id)} className={styles.icon} src={imgIcon} alt=''/>}
+        {favorite && <img onClick={() => handleDeleteFavorite(id)} className={styles.icon} src={secondFavIcon} alt=''/>}
+
         {message}
-        <button onClick={() => handleDeleteFavorite(match.params.id)}>Remove Favorite</button>
+        
         <img className={styles.image} src={`${image}`} />
         <h2 className={styles.mainTitle}>{title}</h2>
       </div>
@@ -82,12 +101,11 @@ const Recipe = ({ image, title, ingredients, instructions, id, match}) => {
 };
 
 Recipe.propTypes = {
-  recipes: PropTypes.shape({
-    image: PropTypes.string,
-    title: PropTypes.string.isRequired,
-    ingredients: PropTypes.arrayOf(PropTypes.object),
-    instructions: PropTypes.arrayOf(PropTypes.object),
-  }).isRequired
+  id: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  ingredients: PropTypes.arrayOf(PropTypes.object),
+  instructions: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default withRouter(Recipe);

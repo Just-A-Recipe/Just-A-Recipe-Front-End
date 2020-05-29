@@ -19,16 +19,9 @@ const RecipeList = ({ recipeList }) => {
 
     </Link>
   ));
-  const recipeTitle = recipeList.map(recipe => (
-
-    <div key={recipe.id}>
-    </div>
-    
-  ));
   return (
     <div className={styles.cardContainer}>
       {recipeElements}
-      {/* {recipeTitle} */}
     </div>
   );
 };
