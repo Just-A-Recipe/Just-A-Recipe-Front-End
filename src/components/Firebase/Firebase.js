@@ -39,8 +39,7 @@ class Firebase {
       displayName: name
     });
   }
-
-
+  
   isInitialized() {
     return new Promise(resolve => {
       this.auth.onAuthStateChanged(resolve);

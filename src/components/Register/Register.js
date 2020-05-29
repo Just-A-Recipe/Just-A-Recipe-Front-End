@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import firebase from '../../components/Firebase/Firebase';
+import firebase from '../Firebase/Firebase';
 import PropTypes from 'prop-types';
 import styles from './Register.css';
 
@@ -17,6 +17,7 @@ function Register(props) {
       console.error(error);
     }
   };
+
   return (
     <div className={styles.registerContainer}>
       <div className={styles.backgroundImage}>
@@ -44,4 +45,3 @@ Register.propTypes = {
 };
 
 export default withRouter(Register);
-

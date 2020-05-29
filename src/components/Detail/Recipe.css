@@ -1,5 +1,3 @@
-
-
 .mainTitle {
     font-weight: bold; 
     font-family: cursive;   
@@ -8,7 +6,6 @@
     margin-bottom: 17px;
     text-align: center;
 }
-
 .titles {
     text-decoration: underline salmon;
     font-size: x-large;
@@ -16,21 +13,13 @@
 .icon {
     width: 20px;
     position: relative;
-    /* float: right; */
 }
 .ingredients, .instructions {
     text-align: center;
     width: 35vw;
     font-size: large;
     padding-bottom: 5rem;
-    /* margin-bottom: 1rem; */
 }
-
-/* .instructions {
-    text-align: center;
-    width: 35vw;
-} */
-
 .imageDiv {
     display: block;
     margin-left: auto;
@@ -39,15 +28,17 @@
     margin-right: auto;
     margin-left: auto;
 }
-
 .image {
     border-radius: 20px;
     border-top: 20px solid #FFA384;
     border-right: 20px solid #EFE7BC;
     border-bottom: 20px solid #74BDCB;
-    border-left: 20px solid #E7F2F8
+    border-left: 20px solid #E7F2F8;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
-
 .theSection {
     display: flex;
     flex-direction: row;
