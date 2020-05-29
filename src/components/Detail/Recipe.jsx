@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import imgIcon from '../../assets/favorite.png';
 import secondFavIcon from '../../assets/star.png';
-import {  withRouter, useParams } from 'react-router-dom';
+import {  withRouter } from 'react-router-dom';
 import { addFavorite, deleteFavorite, getUserFavorites } from '../../services/spoonacular';
 import firebase from '../Firebase/Firebase';
 import styles from './Recipe.css';

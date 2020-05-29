@@ -7,8 +7,7 @@ describe ('spoonacular api fetch call', () => {
         results: [{
           title: 'pizza',
           image: 'someimage'
-        },
-        {
+        }, {
           title: 'Better Pizza',
           image: 'bc it has pineapples'
         }]

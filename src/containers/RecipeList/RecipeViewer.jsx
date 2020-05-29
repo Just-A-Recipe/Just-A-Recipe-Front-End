@@ -9,7 +9,6 @@ const RecipeViewer = () => {
   const [recipes, setRecipes] = useState(['']);
   const [searchQuery, setSearchQuery] = useState('');
   const [offset, setOffset] = useState(0);
-  // eslint-disable-next-line no-unused-vars
   const [name, setName] = useState('');
   const [checked, setChecked] = useState([]);
   useEffect(() => {

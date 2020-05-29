@@ -13,16 +13,12 @@ const firebaseConfig = {
   appId: '1:101040988144:web:ad4159e1b36637630d4735',
   measurementId: 'G-CYJ1PY9DC1'
 }
-// Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
-
 class Firebase {
   constructor() {
     app.initializeApp(firebaseConfig);
     this.auth = app.auth();
     this.db = app.firestore();
   }
-//the this. auth... is the firebase api 
   login(email, password) {
     return this.auth.signInWithEmailAndPassword(email, password);
   }
