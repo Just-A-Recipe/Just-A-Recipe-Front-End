@@ -1,6 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 .loginContainer {
-    /* align-items: center;
-    justify-content: center; */
+    height: 25vh;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -11,26 +15,25 @@
     width: 100%;
 } 
 .backgroundImage {
+    flex-flow: column;
     background-image: url(../../../public/assets/Restaurant.jpg);
     opacity: .8;
-    z-index: -1;
-    height: 60rem;
-    margin-top: 1.6rem;
+    height: 318%;
+    /* margin-top: 1.6rem; */
     background-size: 100%;
     background-repeat: no-repeat;
-    /* height: calc(100vh - 145px); */
+    top: 0;
 }  
 .card{
     width: 20%;
     background-color:  aquamarine;
     display: flex;
     flex-direction: column;
-    margin: rem 0;
+    margin: 15rem 0;
     box-shadow: .5rem .5rem 2rem rgba(255, 163, 132, 1);
-    /* display: block; */
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: auto;
     border-radius:5%
     }
 .header{
@@ -41,10 +44,8 @@
     margin-right: .3rem;
     margin-bottom: 5rem;
     text-align: center;
-    color: purple;
+    color: #333 black;
     position: relative;
-    z-index: 999;
-    opacity: 1;
     }
 .submit {
     background-color: #74BDCB;

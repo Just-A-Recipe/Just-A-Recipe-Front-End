@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import firebase from '../../components/Firebase/Firebase';
+import firebase from '../Firebase/Firebase';
 import PropTypes from 'prop-types';
 import styles from './Register.css';
 
