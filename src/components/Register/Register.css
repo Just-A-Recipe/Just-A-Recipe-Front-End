@@ -5,6 +5,7 @@
 }
 .registerContainer {
   height: 25vh;
+
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -24,9 +25,8 @@
   /* margin-top: 1.6rem; */
   background-size: 100%;
   background-repeat: no-repeat;
-  /* height: calc(100vh - 145px); */
 } 
-.card{
+.card {
   width: 20%;
   background-color:  aquamarine;
   display: flex;
@@ -37,8 +37,8 @@
   margin-left: auto;
   margin-right: auto;
   border-radius:5%
-  }
-.header{
+}
+.header {
   font-family: pacifico;
   text-transform: uppercase;
   font-size: 3.5rem;
@@ -48,18 +48,18 @@
   text-align: center;
   color:  #333 black;
   position: relative;
-  }
+}
 .submit {
   background-color: #74BDCB;
-color: white;
-padding: 1.5rem 5rem;
-margin: .5rem 0;
-border: none;
-cursor: pointer;
-width: 100%;
-border-radius:5%
+  color: white;
+  padding: 1.5rem 5rem;
+  margin: .5rem 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius:5%
 }
-.input{
+.input {
   width: 100%;
   padding: 1.5rem 5rem;
   margin: .5rem 0;
@@ -69,7 +69,7 @@ border-radius:5%
   box-sizing: border-box;
   border-radius:5%
 }
-.input:hover{
+.input:hover {
   opacity: 0.8;
 }
 .submit:hover {

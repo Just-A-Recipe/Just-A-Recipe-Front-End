@@ -70,6 +70,5 @@ export const getUserFavorites = (userEmail) => {
   return fetch (`${API_URL}favorites/${userEmail}`)
     .then(res => res.json()).then((json) => ({
       body: json
-      // console.log(JSON.stringify(json))
     }));
 };

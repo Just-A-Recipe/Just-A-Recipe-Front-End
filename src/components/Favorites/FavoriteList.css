@@ -16,7 +16,7 @@
   margin: .75rem;
   margin: 1rem;
 }
-.card:hover{
+.card:hover {
   transform: scale(1.15);
   display: block;
   width: 100%;
@@ -35,7 +35,7 @@
   position: absolute; 
   bottom: 0; 
   background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
   color: #f1f1f1; 
   width: 100%;
   transition: .5s ease;
@@ -43,9 +43,4 @@
   font-size: 20px;
   padding: 20px;
   text-align: center;
-}
-.RecipeList {
-  height: 25rem;
-  display: block;
-  margin: 1rem 0;
 }
