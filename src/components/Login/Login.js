@@ -18,8 +18,8 @@ function Login(props) {
   };
   
   return (
-    <div className={styles.backgroundImage}>
-      <div className={styles.loginContainer}>
+    <div className={styles.loginContainer}>
+      <div className={styles.backgroundImage}>
         <h1 className={styles.header}>Login</h1>
         <div className={styles.loginPaper}>
           <div className={styles.card}>
