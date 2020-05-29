@@ -5,8 +5,7 @@ import { fetchRecipe, fetchRecipeImage } from '../../services/spoonacular';
 import style from './FavoriteList.css'
 
 const FavoriteList = ({ favoriteList }) => {
-//   let currRecipe = await fetchRecipe(favorite.recipeId);
-//   let currRecipeImage = await fetchRecipeImage(favorite.recipeId);
+
   const favoriteElement = favoriteList.map((favorite) => (
     <Link className={style.RecipeList} key={favorite.id} to={`/${favorite.id}`}>
       <div className={style.cardSection}>
