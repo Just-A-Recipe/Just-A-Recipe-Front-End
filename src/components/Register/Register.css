@@ -5,11 +5,9 @@
 }
 .registerContainer {
   height: 25vh;
-
   display: block;
   margin-left: auto;
   margin-right: auto;
-  
 }
 .loginPaper {
   align-items: left;
