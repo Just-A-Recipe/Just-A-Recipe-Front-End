@@ -20,8 +20,8 @@ function Login(props) {
   return (
     <div className={styles.loginContainer}>
       <div className={styles.backgroundImage}>
-        <h1 className={styles.header}>Login</h1>
         <div className={styles.loginPaper}>
+          <h1 className={styles.header}>Login</h1>
           <div className={styles.card}>
             <form id="login-form">
               <input className={styles.input} type="text" placeholder='email' name="email" onChange={(e) => {setEmail(e.target.value);}}>
