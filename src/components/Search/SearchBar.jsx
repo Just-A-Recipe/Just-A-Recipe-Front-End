@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import style from './SearchBar.css';
 
 const allergy = ['Seafood', 'Dairy', 'Gluten', 'Grain', 'Peanut', 'Sesame',  'Shellfish', 'Soy', 'Sulfite', 'Wheat'];
-
 const SearchBar = ({ searchQuery, onChange, onSearch, checked }) => {
   const checkboxElements = allergy.map(option => (
     <label className={style.label}key={option}>
@@ -29,4 +28,5 @@ SearchBar.propTypes = {
   onSearch: PropTypes.func.isRequired,
   checked: PropTypes.func.isRequired
 };
+
 export default SearchBar;

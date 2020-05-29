@@ -12,21 +12,22 @@ const RecipeList = ({ recipeList }) => {
           <div className={styles.title}>{recipe.title}</div>
         </div>
       </div>
-
     </Link>
   ));
+
   return (
     <div className={styles.cardContainer}>
       {recipeElements}
     </div>
   );
 };
+
 RecipeList.propTypes = {
   recipeList: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired
-
   })).isRequired
 };
+
 export default RecipeList;

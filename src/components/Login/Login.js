@@ -4,22 +4,19 @@ import { Link, withRouter } from 'react-router-dom';
 import firebase from '../../components/Firebase/Firebase';
 import PropTypes from 'prop-types';
 
-
 function Login(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
   const handleSubmit = async(e) => {
     e.preventDefault();
-    
     try {
       await firebase.login(email, password);
-      
       props.history.replace('/');
     } catch(error) {
       console.error(error);
     }
   };
+  
   return (
     <div className={styles.backgroundImage}>
       <div className={styles.loginContainer}>

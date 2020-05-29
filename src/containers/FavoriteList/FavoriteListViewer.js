@@ -7,11 +7,9 @@ import { fetchRecipe } from '../../services/spoonacular';
 export default function FavoriteListViewer() {
   const [recipes, setRecipes] = useState([]);
   const [offset, setOffset] = useState(0);
-
   useEffect(() => {
     getUserFavorites(firebase.getCurrentEmail())
       .then(favorites => {
-      //  console.log(favorites);
         return Promise.all(favorites.body.map(recipeObj => fetchRecipe(recipeObj.recipeId)));
       })
       .then(fetchRecipes => setRecipes(fetchRecipes));
@@ -22,9 +20,7 @@ export default function FavoriteListViewer() {
   return (
     <div>
       <button onClick={() => decrement()} disabled={offset === 0}>&lt;</button>
-
       <button onClick={() => increment()} disabled={recipes.length < 20}>&gt;</button>
-
       <FavoriteList favoriteList={recipes} />
     </div>
   );
