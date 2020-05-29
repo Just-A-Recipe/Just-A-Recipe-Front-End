@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { fetchRecipe, fetchRecipeImage } from '../../services/spoonacular';
-import style from './FavoriteList.css'
+import style from './FavoriteList.css';
 
 const FavoriteList = ({ favoriteList }) => {
 

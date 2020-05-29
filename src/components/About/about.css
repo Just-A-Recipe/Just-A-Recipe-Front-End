@@ -5,10 +5,10 @@
 }
 html {
   font-size: 10px;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
 }
 .heading {
-  font-family: pacifico;
+  /* font-family: pacifico; */
   text-transform: uppercase;
   font-size: 3.5rem;
   letter-spacing: 3px;
@@ -24,7 +24,7 @@ html {
   height:.8rem;
   background-color: rgb(0, 225, 255);
   position: absolute;
-  bottom:-2rem;
+  bottom: -.4rem;
   left:50%;
   transform: translateX(-50%);
   border-radius: 2rem;
@@ -34,9 +34,10 @@ html {
   flex-flow: wrap;
   justify-content: space-evenly;
 }
-.card {
-  width: 30rem;
-  background-color: salmon;
+.card{
+  width: 33rem;
+
+  /* background-color: salmon; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,7 +72,7 @@ html {
 .about {
   font-size: 1.5rem;
   margin: 1.5rem ;
-  font-style: italic;
+  /* font-style: italic; */
   text-align: center;
   color: #333;
 }
@@ -85,4 +86,5 @@ html {
   height: 3rem;
   object-fit: cover;
   border:  1rem  aquamarine;
+  margin-bottom:1rem;
 }

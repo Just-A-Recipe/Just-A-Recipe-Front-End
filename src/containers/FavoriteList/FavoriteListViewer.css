@@ -1,0 +1,26 @@
+.pagingBackButton {
+  float: left;
+  border-radius: 1rem;
+  background: linear-gradient(to bottom, salmon 15%, rgb(247, 171, 162) 100%);
+  border: .2rem solid salmon;
+  display: inline-block;
+  cursor: pointer;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: .5rem 2rem;
+  text-shadow: 0rem .01rem 0rem black;
+}
+.pagingForwardButton {
+  float: right;
+  border-radius: 1rem;
+  background: linear-gradient(to bottom, salmon 15%, rgb(247, 171, 162) 100%);
+  border: .2rem solid salmon;
+  display: inline-block;
+  cursor: pointer;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: .5rem 2rem;
+  text-shadow: 0rem .01rem 0rem black;
+}

@@ -1,4 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .registerContainer {
+  height: 25vh;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -9,11 +15,12 @@
   width: 100%;
 }  
 .backgroundImage {
+  flex-flow: column;
   background-image: url(../../../public/assets/Restaurant.jpg);
   opacity: .8;
-  z-index: -1;
-  height: 60rem;
-  margin-top: 1.6rem;
+  /* z-index: -1; */
+  height: 318%;
+  /* margin-top: 1.6rem; */
   background-size: 100%;
   background-repeat: no-repeat;
 } 
@@ -30,7 +37,7 @@
   border-radius:5%
 }
 .header {
-  font-family: pacifico;
+  /* font-family: pacifico; */
   text-transform: uppercase;
   font-size: 3.5rem;
   letter-spacing: .3rem;

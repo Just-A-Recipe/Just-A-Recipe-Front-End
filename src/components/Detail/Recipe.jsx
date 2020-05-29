@@ -38,7 +38,7 @@ const Recipe = ({ image, title, ingredients, instructions, id }) => {
         if(!firebase.getCurrentEmail()){
           setMessage('Login / Create Account to Add to Favorites!');
         } else {
-          setMessage(`${res.id} Added to Favorites!`);
+          setMessage('Recipe Added to Favorites!');
         }
       }).catch(err => {
         console.error(err);
