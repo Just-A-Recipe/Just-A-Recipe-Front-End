@@ -5,10 +5,10 @@
 }
 html {
   font-size: 10px;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
 }
 .heading {
-  font-family: pacifico;
+  /* font-family: pacifico; */
   text-transform: uppercase;
   font-size: 3.5rem;
   letter-spacing: 3px;
@@ -37,7 +37,7 @@ html {
 .card{
   width: 33rem;
 
-  background-color: salmon;
+  /* background-color: salmon; */
   display: flex;
   flex-direction: column;
   align-items: center;

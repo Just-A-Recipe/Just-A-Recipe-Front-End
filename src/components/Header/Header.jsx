@@ -3,6 +3,7 @@ import styles from './Header.css';
 import { NavLink, withRouter, Link, useHistory } from 'react-router-dom';
 import firebase from '../Firebase/Firebase';
 import { getUserFavorites } from '../../services/spoonacular';
+import Logo from '../../assets/logo2.png';
 
 const Header = () => {
   const { history } = useHistory();
@@ -28,7 +29,7 @@ const Header = () => {
           <button onClick={() => handleLogout()}>Log Out</button>
         </div>) : null}
       <div className={styles.headerDiv}>
-        <h1>Just a Recipe</h1>
+        <img className={styles.logo} src={Logo} alt=''/>
         <NavLink to="/" className={styles.link}>Recipes</NavLink> 
         {loginLogout}
         <NavLink to="/register" className={styles.link}>Register</NavLink>
