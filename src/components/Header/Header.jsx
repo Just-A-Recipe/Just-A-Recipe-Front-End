@@ -9,6 +9,7 @@ const Header = () => {
   const { history } = useHistory();
   const [user, setUser] = useState(null); 
   const loggedIn = !!user;
+
   useEffect(() => {
     return firebase.onAuthStateChanged(user => {
       setUser(user);
@@ -33,7 +34,7 @@ const Header = () => {
         <NavLink to="/register" className={styles.link}>Register</NavLink>
         <NavLink to="/login" className={styles.link}>Log In</NavLink>
         <NavLink to="/about" className={styles.link}>Contact Us</NavLink> 
-        <NavLink to="/Favorites" className={styles.link}>Favorites</NavLink>
+        {loggedIn ? <NavLink to="/Favorites" className={styles.link}>Favorites</NavLink> : null }
       </div>
     </>
   );   
