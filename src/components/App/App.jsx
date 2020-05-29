@@ -19,7 +19,6 @@ export default function App() {
 
   useEffect(() => {
     firebase.isInitialized().then(val => {
-      // console.log("VAL:", val);
       setFirebaseInitialized(val);
     });
   });

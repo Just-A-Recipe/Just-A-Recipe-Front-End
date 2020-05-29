@@ -19,8 +19,6 @@ const Header = () => {
     firebase.logout();
     history.push('/');
   };
-
-  // const loginLogout = loggedIn ? null : <NavLink to="/login" className={styles.link}>Log In</NavLink>;
   
   return (
     <>
@@ -32,7 +30,6 @@ const Header = () => {
       <div className={styles.headerDiv}>
         <img className={styles.logo} src={Logo} alt=''/>
         <NavLink to="/" className={styles.link}>Recipes</NavLink> 
-        {/* {loginLogout} */}
         <NavLink to="/register" className={styles.link}>Register</NavLink>
         <NavLink to="/login" className={styles.link}>Log In</NavLink>
         <NavLink to="/about" className={styles.link}>Contact Us</NavLink> 

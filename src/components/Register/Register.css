@@ -18,9 +18,7 @@
   flex-flow: column;
   background-image: url(../../../public/assets/Restaurant.jpg);
   opacity: .8;
-  /* z-index: -1; */
   height: 318%;
-  /* margin-top: 1.6rem; */
   background-size: 100%;
   background-repeat: no-repeat;
 } 
@@ -37,7 +35,6 @@
   border-radius:5%
 }
 .header {
-  /* font-family: pacifico; */
   text-transform: uppercase;
   font-size: 3.5rem;
   letter-spacing: .3rem;

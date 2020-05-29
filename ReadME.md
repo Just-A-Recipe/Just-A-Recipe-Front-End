@@ -1,22 +1,3 @@
-!!!!!!!!!!!!!!!!Sprint!!!!!!!!!!!!!!!!
-*Header*
-Logo
-Move the Account stuff, same link would be cool
-
-*Reciple List*
-Loading gif or spinner or thing as it shows everthing up
-Catch if no results
-
-*Recipe Detail*
-Background or something
-No longer show the id when favorited
-
-
-*Other*
-Passing Tests
-Retype ReadMe to reflect project
-
-
 Just a Reccipe
 
 Developed by; Anastasia Morozova, Surelis Segarra, James Eserjose, Dorje Kirsten, and Cody Brown

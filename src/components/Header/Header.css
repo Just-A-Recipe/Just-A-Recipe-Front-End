@@ -1,6 +1,5 @@
 .headerDiv {
   display: block;
-  /* font-family: pacifico; */
   font-size: x-large;
   background-color: aquamarine;
   color: black;
@@ -28,6 +27,6 @@
   position: relative;
   left: 180px;
 }
-.name{
+.name {
   display: none;
 }
