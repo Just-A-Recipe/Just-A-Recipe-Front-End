@@ -1,9 +1,10 @@
-  import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import RecipeList from '../../components/RecipeList/RecipeList';
 import { fetchRecipes, fetchIntolerances } from '../../services/spoonacular';
 import SearchBar from '../../components/Search/SearchBar';
 import firebase from '../../components/Firebase/Firebase';
 import style from './RecipeViewer.css';
+
 const RecipeViewer = () => {
   const [recipes, setRecipes] = useState(['']);
   const [searchQuery, setSearchQuery] = useState('');
@@ -20,13 +21,13 @@ const RecipeViewer = () => {
     }
   }, [offset, checked]);
   if(!firebase.getCurrentUsername()){
-    // do stuff if youre not signed in
   }
   useEffect(() => {
     fetchRecipes(searchQuery, offset)
       .then(fetchRecipes => setRecipes(fetchRecipes));
     setName(firebase.getCurrentUsername());
   }, [offset]);
+
   const onChange = ({ target }) => setSearchQuery(target.value);
   const onSearch = (e) => {
     e.preventDefault();
@@ -38,6 +39,7 @@ const RecipeViewer = () => {
         .then(fetchRecipes => setRecipes(fetchRecipes));
     }
   };
+  
   const handleChecked = ({ target }) => {
     if(target.checked) {
       setChecked([...checked, target.value]);
@@ -48,9 +50,10 @@ const RecipeViewer = () => {
       setChecked(newArr);
     }
   };
-  const decrement = () => setOffset(prevPage => prevPage - 20);
-  const increment = () => setOffset(prevPage => prevPage + 20);
-  // const message = firebase.getCurrentUsername ? `Welcome ${firebase.getCurrentUsername}` : null;
+
+  const decrement = () => setOffset(prevPage => prevPage - 30);
+  const increment = () => setOffset(prevPage => prevPage + 30);
+
   return (
     <>
       <SearchBar searchQuery={searchQuery} onChange={onChange} onSearch={onSearch} checked={handleChecked} />
@@ -60,4 +63,7 @@ const RecipeViewer = () => {
     </>
   );
 };
+
 export default RecipeViewer;
+
+
