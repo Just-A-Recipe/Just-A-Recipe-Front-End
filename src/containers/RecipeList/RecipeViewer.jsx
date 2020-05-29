@@ -19,10 +19,6 @@ const RecipeViewer = () => {
         .then(fetchRecipes => setRecipes(fetchRecipes));
     }
   }, [offset, checked]);
-<<<<<<< HEAD
-  if(!fetchRecipes) return <h1>Loading</h1>;
-=======
->>>>>>> 0c3d0effff2d2036c2e5410c65af31f6c61fd8bb
   if(!firebase.getCurrentUsername()){
     // do stuff if youre not signed in
   }
