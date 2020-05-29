@@ -64,11 +64,6 @@ const Recipe = ({ image, title, ingredients, instructions, id }) => {
           });
       });
   };
-
-  // useEffect(() => {
-  //   getUserFavorites(firebase.getCurrentEmail())
-  //   setFavorite()
-  // });
   
   return (
     <div>
