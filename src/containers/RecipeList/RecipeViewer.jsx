@@ -48,8 +48,8 @@ const RecipeViewer = () => {
       setChecked(newArr);
     }
   };
-  const decrement = () => setOffset(prevPage => prevPage - 20);
-  const increment = () => setOffset(prevPage => prevPage + 20);
+  const decrement = () => setOffset(prevPage => prevPage - 30);
+  const increment = () => setOffset(prevPage => prevPage + 30);
   // const message = firebase.getCurrentUsername ? `Welcome ${firebase.getCurrentUsername}` : null;
   return (
     <>
