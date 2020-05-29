@@ -26,7 +26,7 @@ const Header = () => {
     <>
       {loggedIn ?  
         (<div className={styles.UserControls}>
-          <Link onClick={() => getUserFavorites(firebase.getCurrentEmail())} to='/favorites'>See {user.displayName} Favorites</Link>
+          <Link className={styles.name} onClick={() => getUserFavorites(firebase.getCurrentEmail())} to='/favorites'>{user.displayName}</Link>
           <button onClick={() => handleLogout()}>Log Out</button>
         </div>) : null}
       <div className={styles.headerDiv}>
@@ -36,6 +36,7 @@ const Header = () => {
         <NavLink to="/register" className={styles.link}>Register</NavLink>
         <NavLink to="/login" className={styles.link}>Log In</NavLink>
         <NavLink to="/about" className={styles.link}>Contact Us</NavLink> 
+        <NavLink to="/Favorites" className={styles.link}>Favorites</NavLink>
       </div>
     </>
   );   
