@@ -17,8 +17,8 @@ export default function FavoriteListViewer() {
       .then(fetchRecipes => setRecipes(fetchRecipes));
   }, [offset]);
 
-  const decrement = () => setOffset(prevPage => prevPage - 20);
-  const increment = () => setOffset(prevPage => prevPage + 20);
+  const decrement = () => setOffset(prevPage => prevPage - 28);
+  const increment = () => setOffset(prevPage => prevPage + 28);
   return (
     <div>
       <button onClick={() => decrement()} disabled={offset === 0}>&lt;</button>

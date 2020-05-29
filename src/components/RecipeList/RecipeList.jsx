@@ -6,10 +6,6 @@ import styles from './RecipeList.css';
 const RecipeList = ({ recipeList }) => {
   const recipeElements = recipeList.map(recipe => (
     <Link className={styles.RecipeList} key={recipe.id} to={`/${recipe.id}` }>
-      {/* <li>
-        <img src={`https://spoonacular.com/recipeImages/${recipe.id}-312x231.jpg`}/>
-        <h2>{recipe.title}</h2>
-      </li> */}
       <div className={styles.cardSection}>
         <div className={styles.card}>
           <img className={styles.image} src={`https://spoonacular.com/recipeImages/${recipe.id}-312x231.jpg`}/>
