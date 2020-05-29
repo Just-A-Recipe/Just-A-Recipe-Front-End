@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import { fetchRecipe, fetchRecipeImage } from '../../services/spoonacular';
 
 const FavoriteList = ({ favoriteList }) => {
-//   let currRecipe = await fetchRecipe(favorite.recipeId);
-//   let currRecipeImage = await fetchRecipeImage(favorite.recipeId);
+
   const favoriteElement = favoriteList.map((favorite) => (
     <Link key={favorite.id} to={`/${favorite.id}`}>
       <li>
