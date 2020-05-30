@@ -4,18 +4,22 @@ import imgIcon from '../../assets/favorite.png';
 import secondFavIcon from '../../assets/star.png';
 import {  withRouter } from 'react-router-dom';
 import { addFavorite, deleteFavorite, getUserFavorites } from '../../services/spoonacular';
-import firebase from '../Firebase/Firebase';
+import firebase, { useCurrentEmail } from '../Firebase/Firebase';
 import styles from './Recipe.css';
 
 const Recipe = ({ image, title, ingredients, instructions, id }) => {
+  const currentUserEmail = useCurrentEmail();
   const [message, setMessage] = useState('');
-  const [favorite, setFavorite] = useState(false);
+  const [favorite, setFavorite] = useState(null);
+
   useEffect(() => {
-    getUserFavorites(firebase.getCurrentEmail())
+    getUserFavorites(currentUserEmail)
       .then(fetchedFavorite => {
-        console.log(fetchedFavorite);
-        const isFavorite = fetchedFavorite.body.some(({ recipeId }) => recipeId === +id);
-        setFavorite(isFavorite);
+        // it would be better to do this on your backend
+        // make a route to get a user favorite by userEmail and recipeId
+        const favorite = fetchedFavorite.find(({ recipeId }) => recipeId === +id);
+        // store the favorite object so you don't have to search for it later
+        setFavorite(favorite);
       });
   }, []);
 
@@ -32,38 +36,25 @@ const Recipe = ({ image, title, ingredients, instructions, id }) => {
   ));
 
   const handleAddFavorite = (id) => {
+    // exit early
+    if(!currentUserEmail) return setMessage('Login / Create Account to Add to Favorites!');
     setFavorite(true);
-    addFavorite(firebase.getCurrentEmail(), parseInt(id))
-      .then(res => {
-        if(!firebase.getCurrentEmail()){
-          setMessage('Login / Create Account to Add to Favorites!');
-        } else {
-          setMessage('Recipe Added to Favorites!');
-        }
+    addFavorite(currentUserEmail, parseInt(id))
+      .then(() => {
+        setMessage('Recipe Added to Favorites!');
       }).catch(err => {
         console.error(err);
       });
   };
 
   const handleDeleteFavorite = (id) => {
-    let favId;
+    if(!favorite) return;
     setFavorite(false);
-    getUserFavorites(firebase.getCurrentEmail())
-      .then((res)=> {
-        res.body.forEach(fav => {
-          if(fav.recipeId == id) {
-            favId = fav._id;
-          }
-        });
-        deleteFavorite(favId)
-          .then(res => {
-            setMessage(res.message);
-          }).catch(err => {
-            console.error(err);
-          });
-      });
+    deleteFavorite(favorite._id)
+      .then(res => setMessage(res.message))
+      .catch(console.error);
   };
-  
+
   return (
     <div>
       <div className={styles.imageDiv}>
