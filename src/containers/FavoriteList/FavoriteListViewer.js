@@ -11,7 +11,6 @@ export default function FavoriteListViewer() {
   useEffect(() => {
     getUserFavorites(firebase.getCurrentEmail())
       .then(favorites => {
-        // do this work on the backend
         return Promise.all(favorites.body.map(recipeObj => fetchRecipe(recipeObj.recipeId)));
       })
       .then(fetchRecipes => setRecipes(fetchRecipes));

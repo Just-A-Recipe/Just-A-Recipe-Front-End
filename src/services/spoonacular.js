@@ -47,7 +47,7 @@ export const fetchIntolerances = (searchQuery, offset, intolerances) => {
 
 export const addFavorite = (userEmail, recipeId) => {
   return fetch (`${API_URL}favorites`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ userEmail: userEmail, recipeId: recipeId }) })
-    .then(res =>
+    .then(res => 
       res.json()
     )
     .then(json => ({
@@ -67,6 +67,7 @@ export const deleteFavorite = (favId) => {
 
 export const getUserFavorites = (userEmail) => {
   return fetch (`${API_URL}favorites/${userEmail}`)
-    // don't nest promises
-    .then(res => res.json());
+    .then(res => res.json()).then((json) => ({
+      body: json
+    }));
 };
