@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
+import { 
   BrowserRouter as Router,
   Route,
   Switch
@@ -18,14 +18,12 @@ export default function App() {
   const [firebaseInitialized, setFirebaseInitialized] = useState(false);
 
   useEffect(() => {
-    // return here to unsubscribe to prevent memory leaks
-    return firebase.onAuthStateChanged(() => {
-      setFirebaseInitialized(true);
+    firebase.isInitialized().then(val => {
+      setFirebaseInitialized(val);
     });
   });
-
-  // firebaseInitialized is already a boolean. no need to check if it is false
-  return firebaseInitialized ? (
+  
+  return firebaseInitialized !== false ? (
     <Router>
       <Header />
       <Switch>
